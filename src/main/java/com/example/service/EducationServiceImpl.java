@@ -25,5 +25,12 @@ public class EducationServiceImpl implements EducationService {
 	public EducationVO getBoard(EducationVO vo) {
 		return eduRepo.findById(vo.getEd_id()).get();
 	}
+	
+	//경호
+	//관리자페이지
+	//상품 전체 조회
+	public List<EducationVO> selectAllAcademy() {
+		return (List<EducationVO>) eduRepo.findAll();
+	}
 
 }
