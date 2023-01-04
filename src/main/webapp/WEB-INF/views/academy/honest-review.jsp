@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
    <head>
@@ -7,20 +10,21 @@
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
-      <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+      <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.png">
       <!-- CSS here -->
-      <link rel="stylesheet" href="assets/css/preloader.css">
-      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-      <link rel="stylesheet" href="assets/css/meanmenu.css">
-      <link rel="stylesheet" href="assets/css/animate.min.css">
-      <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-      <link rel="stylesheet" href="assets/css/swiper-bundle.css">
-      <link rel="stylesheet" href="assets/css/backToTop.css">
-      <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
-      <link rel="stylesheet" href="assets/css/fontAwesome5Pro.css">
-      <link rel="stylesheet" href="assets/css/elegantFont.css">
-      <link rel="stylesheet" href="assets/css/default.css">
-      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="/assets/css/preloader.css">
+      <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/assets/css/meanmenu.css">
+      <link rel="stylesheet" href="/assets/css/animate.min.css">
+      <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="/assets/css/swiper-bundle.css">
+      <link rel="stylesheet" href="/assets/css/backToTop.css">
+      <link rel="stylesheet" href="/assets/css/jquery.fancybox.min.css">
+      <link rel="stylesheet" href="/assets/css/fontAwesome5Pro.css">
+      <link rel="stylesheet" href="/assets/css/elegantFont.css">
+      <link rel="stylesheet" href="/assets/css/default.css">
+      <link rel="stylesheet" href="/assets/css/style.css">
+      <link rel="stylesheet" href="/assets/css/honest-review.css">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -34,9 +38,9 @@
          <div id="loading-center">
             <div id="loading-center-absolute">
                <div class="loading-content">
-                  <img class="loading-logo-text" src="assets/img/logo/logo-text-2.png" alt="">
+                  <img class="loading-logo-text" src="/assets/img/logo/logo-text-2.png" alt="">
                   <div class="loading-stroke">
-                     <img class="loading-logo-icon" src="assets/img/logo/logo-icon.png" alt="">
+                     <img class="loading-logo-icon" src="/assets/img/logo/logo-icon.png" alt="">
                   </div>
                </div>
             </div>
@@ -61,7 +65,7 @@
                      <div class="header__left d-flex">
                         <div class="logo">
                            <a href="index">
-                              <img src="assets/img/logo/logo.png" alt="logo">
+                              <img src="/assets/img/logo/logo.png" alt="logo">
                            </a>
                         </div>
                         <div class="header__category d-none d-lg-block">
@@ -182,7 +186,7 @@
                      <li>
                         <div class="cartmini__thumb">
                            <a href="#">
-                              <img src="assets/img/course/sm/cart-1.jpg" alt="">
+                              <img src="/assets/img/course/sm/cart-1.jpg" alt="">
                            </a>
                         </div>
                         <div class="cartmini__content">
@@ -201,7 +205,7 @@
                      <li>
                         <div class="cartmini__thumb">
                            <a href="#">
-                              <img src="assets/img/course/sm/cart-2.jpg" alt="">
+                              <img src="/assets/img/course/sm/cart-2.jpg" alt="">
                            </a>
                         </div>
                         <div class="cartmini__content">
@@ -220,7 +224,7 @@
                      <li>
                         <div class="cartmini__thumb">
                            <a href="#">
-                              <img src="assets/img/course/sm/cart-3.jpg" alt="">
+                              <img src="/assets/img/course/sm/cart-3.jpg" alt="">
                            </a>
                         </div>
                         <div class="cartmini__content">
@@ -299,80 +303,48 @@
 
       <main>
 
-         <!-- sign up area start -->
-         <section class="signup__area po-rel-z1 pt-100 pb-145">
-            <div class="sign__shape">
-               <img class="man-1" src="assets/img/icon/sign/man-1.png" alt="">
-               <img class="man-2" src="assets/img/icon/sign/man-2.png" alt="">
-               <img class="circle" src="assets/img/icon/sign/circle.png" alt="">
-               <img class="zigzag" src="assets/img/icon/sign/zigzag.png" alt="">
-               <img class="dot" src="assets/img/icon/sign/dot.png" alt="">
-               <img class="bg" src="assets/img/icon/sign/sign-up.png" alt="">
-            </div>
-            <div class="container">
-               <div class="row">
-                  <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
-                     <div class="section__title-wrapper text-center mb-55">
-                        <h2 class="section__title">Sign in to <br>  recharge direct.</h2>
-                        <p>it you don't have an account you can <a href="#">Register here!</a></p>
+         
+         <div class="container header-padding-top">
+            <div class="ant-space ant-space-vertical">
+               <div class="honestChat-line">
+                  <div class="honestChat-question">
+                     <div class="honestChat-profile-pic">
+                        <img class="honestChat-profile-size" src="/assets/img/profile-pic/dogShiny.png">
+                     </div>
+                     <div class="honestChat-container">
+                        <div class="honestChat-comment">
+                           <h5 class="ant-typography">
+                              <b>부트텐트는 뭔가요? 부트캠프의 일종인가요?</b>
+                           </h5>
+                        </div>
                      </div>
                   </div>
                </div>
-               <div class="row">
-                  <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                     <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                           <div class="sign__in text-center">
-                              <a href="#" class="sign__social text-start mb-15"><i class="fab fa-facebook-f"></i>Sign in with Facebook</a>
-                              <p> <span>........</span> Or, <a href="sign-in">sign in</a> with your email<span> ........</span> </p>
+               <div class="honestChat-line">
+                  <div class="honestChat-answers ant-gap">
+                     <div class="honestChat-line">
+                        <div class="honestChat-answer">
+                           <div class="honestChat-profile-pic">
+                              <img class="honestChat-profile-size" src="/assets/img/profile-pic/snoopy.png">
+                           </div>
+                           <div class="honestChat-container">
+                              
                            </div>
                         </div>
-                        <div class="sign__form">
-                           <!-- bk 로그인 버튼 액션 -->
-                           <form action="loginMember" type="post">
-                              <div class="sign__input-wrapper mb-25">
-                                 <h5>ID</h5>
-                                 <div class="sign__input">
-                                    <input type="text" placeholder="ID" id="m_id" name="MId">
-                                    <i class="fal fa-user"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__input-wrapper mb-10">
-                                 <h5>Password</h5>
-                                 <div class="sign__input">
-                                    <input type="password" placeholder="Password" id="m_pass" name="MPass">
-                                    <i class="fal fa-lock"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__action d-sm-flex justify-content-between mb-30">
-                                 <div class="sign__agree d-flex align-items-center">
-                                    <input class="m-check-input" type="checkbox" id="m-agree">
-                                    <label class="m-check-label" for="m-agree">Keep me signed in
-                                       </label>
-                                 </div>
-                                 <div class="sign__forgot">
-                                    <a href="#">Forgot your password?</a>
-                                 </div>
-                              </div>
-                              <button class="e-btn  w-100" type="submit"> <span></span> Sign In</button>
-                              <div class="sign__new text-center mt-20">
-                                 <p>New to Markit? <a href="sign-up">Sign Up</a></p>
-                              </div>
-                           </form>
-                        </div>
                      </div>
                   </div>
                </div>
             </div>
-         </section>
-         <!-- sign up area end -->
-         
+         </div>
+
+
+
       </main>
 
          <!-- footer area start -->
          <footer>
             <div class="footer__area footer-bg">
-               <div class="footer__top pt-90 pb-40">
+               <div class="footer__top pt-190 pb-40">
                   <div class="container">
                      <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
@@ -380,7 +352,7 @@
                               <div class="footer__widget-head mb-22">
                                  <div class="footer__logo">
                                     <a href="index">
-                                       <img src="assets/img/logo/logo-2.png" alt="">
+                                       <img src="/assets/img/logo/logo-2.png" alt="">
                                     </a>
                                  </div>
                               </div>
@@ -475,21 +447,21 @@
          </footer>
          <!-- footer area end -->
       <!-- JS here -->
-      <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
-      <script src="assets/js/vendor/waypoints.min.js"></script>
-      <script src="assets/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/jquery.meanmenu.js"></script>
-      <script src="assets/js/swiper-bundle.min.js"></script>
-      <script src="assets/js/owl.carousel.min.js"></script>
-      <script src="assets/js/jquery.fancybox.min.js"></script>
-      <script src="assets/js/isotope.pkgd.min.js"></script>
-      <script src="assets/js/parallax.min.js"></script>
-      <script src="assets/js/backToTop.js"></script>
-      <script src="assets/js/jquery.counterup.min.js"></script>
-      <script src="assets/js/ajax-form.js"></script>
-      <script src="assets/js/wow.min.js"></script>
-      <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-      <script src="assets/js/main.js"></script>
+      <script src="/assets/js/vendor/jquery-3.5.1.min.js"></script>
+      <script src="/assets/js/vendor/waypoints.min.js"></script>
+      <script src="/assets/js/bootstrap.bundle.min.js"></script>
+      <script src="/assets/js/jquery.meanmenu.js"></script>
+      <script src="/assets/js/swiper-bundle.min.js"></script>
+      <script src="/assets/js/owl.carousel.min.js"></script>
+      <script src="/assets/js/jquery.fancybox.min.js"></script>
+      <script src="/assets/js/isotope.pkgd.min.js"></script>
+      <script src="/assets/js/parallax.min.js"></script>
+      <script src="/assets/js/backToTop.js"></script>
+      <script src="/assets/js/jquery.counterup.min.js"></script>
+      <script src="/assets/js/ajax-form.js"></script>
+      <script src="/assets/js/wow.min.js"></script>
+      <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+      <script src="/assets/js/main.js"></script>
    </body>
 </html>
 
