@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
    <head>
+      <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Educal – Online Learning and Education HTML5 Template </title>
+      <title>NEWS </title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
@@ -24,7 +24,6 @@
       <link rel="stylesheet" href="/assets/css/elegantFont.css">
       <link rel="stylesheet" href="/assets/css/default.css">
       <link rel="stylesheet" href="/assets/css/style.css">
-      <link rel="stylesheet" href="/assets/css/honest-review.css">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -36,7 +35,7 @@
       <!-- pre loader area start -->
       <div id="loading">
          <div id="loading-center">
-            <div id="loading-center-absolute">
+            <div id="loading-center-absolute">  
                <div class="loading-content">
                   <img class="loading-logo-text" src="/assets/img/logo/logo-text-2.png" alt="">
                   <div class="loading-stroke">
@@ -58,14 +57,15 @@
 
       <!-- header area start -->
       <header>
-         <div id="header-sticky" class="header__area header__padding-2 header__shadow">
-            <div class="container">
+         <div id="header-sticky" class="header__area header__transparent header__padding header__white">
+            <div class="container-fluid">
                <div class="row align-items-center">
                   <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-4 col-6">
                      <div class="header__left d-flex">
                         <div class="logo">
                            <a href="index">
-                              <img src="/assets/img/logo/logo.png" alt="logo">
+                              <img class="logo-white" src="/assets/img/logo/logo-2.png" alt="logo">
+                              <img class="logo-black" src="/assets/img/logo/logo.png" alt="logo">
                            </a>
                         </div>
                         <div class="header__category d-none d-lg-block">
@@ -107,7 +107,7 @@
                   </div>
                   <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-10 col-sm-8 col-6">
                      <div class="header__right d-flex justify-content-end align-items-center">
-                        <div class="main-menu main-menu-2">
+                        <div class="main-menu main-menu-3">
                            <nav id="mobile-menu">
                               <ul>
                                  <li class="has-dropdown">
@@ -153,8 +153,26 @@
                               </ul>
                            </nav>
                         </div>
-                        <div class="header__btn header__btn-2 ml-50 d-none d-sm-block">
-                           <a href="sign-up" class="e-btn">Sign up</a>
+                        <div class="header__search p-relative ml-50 d-none d-md-block">
+                           <form action="#">
+                              <input type="text" placeholder="Search...">
+                              <button type="submit"><i class="fad fa-search"></i></button>
+                           </form>
+                           <div class="header__cart">
+                              <a href="javascript:void(0);" class="cart-toggle-btn">
+                                 <div class="header__cart-icon">
+                                    <svg viewBox="0 0 24 24">
+                                       <circle class="st0" cx="9" cy="21" r="1"/>
+                                       <circle class="st0" cx="20" cy="21" r="1"/>
+                                       <path class="st0" d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6"/>
+                                    </svg>
+                                 </div>
+                                 <span class="cart-item">2</span>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="header__btn ml-20 d-none d-sm-block">
+                           <a href="contact" class="e-btn">Try for free</a>
                         </div>
                         <div class="sidebar__menu d-xl-none">
                            <div class="sidebar-toggle-btn ml-30" id="sidebar-toggle">
@@ -302,189 +320,232 @@
       <!-- sidebar area end -->
 
       <main>
-
-         
-         <!-- 솔직 질문/답변 시작 -->
-         <div class="container header-padding-top">
-            <div class="ant-space ant-space-vertical ant-gap">
-
-               <!-- 질문 시작 -->
-               <div class="honestChat-line">
-                  <div class="honestChat-question">
-
-                     <!-- 질문자 사진 -->
-                     <div class="honestChat-block">
-
-                        <!-- 프로필 사진 -->
-                        <div class="honestChat-profile-pic">
-                           <img class="honestChat-profile-size" src="/assets/img/profile-pic/dogShiny.png">
-                        </div>
-
-                        <!-- 아이디 출력 -->
-                        <div class="honestChat-profile-ID">
-                           <span class="honestChat-ID">참참참1234</span>
-                        </div>
-
-                     </div>
-
-                     <!-- 질문 채팅 내용 -->
-                     <div class="honestChat-block">
-
-                        <!-- 채팅 내용 -->
-                        <div class="honestChat-container">
-                           <div class="honestChat-comment-right">
-                              <div class="ant-space ant-space-vertical ant-gap">
-                                 <div class="honestChat-line">
-                                    <h5 class="ant-typography">
-                                       <b>부트텐트는 뭔가요? 부트캠프의 일종인가요?</b>
-                                    </h5>
-                                 </div>
-                                 <div class="honestChat-line">
-                                    <p>부트텐트를 처음 접합니다. <br>
-                                       이 사이트는 무엇을 위한 사이트인지 궁금합니다.<br>
-                                    </p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-
-                        <!-- 작성날짜 -->
-                        <div class="honestChat-container-date">
-                           <span class="honestChat-date">2023-01-05 16:34:22</span>
-                        </div>
-
-                     </div>
-
-                  </div>
-               </div>
-
-               <!-- 솔직 답변 시작 -->
-               <div class="honestChat-lines">
-                  <div class="honestChat-answers">
-                     <div class="ant-space ant-space-vertical ant-gap">
-                        
-                        <!-- 답변 -->
-                        <div class="honestChat-line">
-                           <div class="honestChat-answer">
-
-                              <!-- 답변자 사진 -->
-                              <div class="honestChat-block">
-
-                                 <!-- 프로필 사진 -->
-                                 <div class="honestChat-profile-pic">
-                                    <img class="honestChat-profile-size" src="/assets/img/profile-pic/001.png">
-                                 </div>
-
-                                 <!-- 아이디 출력 -->
-                                 <div class="honestChat-profile-ID">
-                                    <span class="honestChat-ID">ㅛ어ㅏㅌㅊㅍㅌㅇㄴ</span>
-                                 </div>
-
-                              </div>
-                              
-                              <!-- 답변자 채팅 내용 -->
-                              <div class="honestChat-block">
-
-                                 <!-- 채팅 내용 -->
-                                 <div class="honestChat-container">
-                                    <div class="honestChat-comment-left">
-                                       <div class="ant-space ant-space-vertical ant-gap">
-                                          <div class="honestChat-line">
-                                             <strong>현) it교육 기획자, 전) 부캠 운영 경험</strong>
-                                          </div>
-                                          <div class="honestChat-line">
-                                             <p>부트텐트는 코딩부트캠프나 개발자 취업을 고민하는 분들이 정보를 편하게 볼 수 있도록 만든
-                                                서비스입니다. <br>
-                                                유튜브를 운영하며 많은 분들이 개발자로의 전직이나 취업을 고민하고 있다는 것을 알게 되었고, <br>
-                                                조금이라도 도움을 드리기 위해 부트텐트를 만들었습니다.<br></p>
-                                             <p>저는 코딩부트캠프를 통해 취업을 하지는 않았지만, 대기업 개발자 경험이 있으며 <br>
-                                                퇴사 후 여러 강의, 국비교육, 부트캠프 등을 들어봤습니다. <br>
-                                                또한 많은 지인들이 네카라쿠배당토 등의 현업 개발자이고, 강의를 하거나 책 저자인 분들도 계십니다. <br>
-                                                궁금하신 부분은 우측하단 채널톡을 이용하시면 아는 한도에서 말씀드리겠습니다.</p>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-
-                                 <!-- 작성날짜 -->
-                                 <div class="honestChat-container-date-right">
-                                    <span class="honestChat-date">2023-01-06 14:00:00</span>
-                                 </div>
-
-                              </div>
-                              
-                           </div>
-                        </div>
-
-                        <!-- 답변 -->
-                        <div class="honestChat-line">
-                           <div class="honestChat-answer">
-                              <!-- 프로필 사진 -->
-                              <div class="honestChat-profile-pic">
-                                 <img class="honestChat-profile-size" src="/assets/img/profile-pic/002.png">
-                              </div>
-                              <div class="honestChat-container">
-                                 <div class="honestChat-comment-left">
-                                    <div class="ant-space ant-space-vertical ant-gap">
-                                       <div class="honestChat-line">
-                                          <strong>현) it교육 기획자, 전) 부캠 운영 경험</strong>
-                                       </div>
-                                       <div class="honestChat-line">
-                                          <p>개발자가 되고 싶은 분들은 점점 많아지고 있습니다. 하지만, ‘어떻게 개발자가 될 수 있을까?’를 궁금해 하시는 분들에게
-                                             제공돼야 하는 좋은 정보들은 아직도 접근성이 많이 떨어집니다. 검색을 해봐도 복잡하고 어려운 용어들로 설명된 이해하기 힘든
-                                             글들이 대부분이고, 업체에서 뿌린 광고성 콘텐츠들 때문에 어떤 정보를 믿어야 할지도 잘 모르겠습니다.</p>
-                                          <p>더 이상 좋은 정보의 부족으로 피해보시는 분들이 없도록, 개발 교육과 개발자 커리어에 대한 진정성 있는 정보를 제공해주는
-                                             서비스가 필요하다고 생각했습니다. 그래서, 부트텐트와 함께 하며 개발자 커리어를 이제 막 준비하는 분들에게 필요한 정보를
-                                             제공해드리는 중입니다.</p>
-                                          <p>저는 한 업체에서 데이터 사이언스와 프론트엔드 취업교육 과정을 기획하고 운영하는 업무를 했었습니다. 현재는 소속을 옮겨서
-                                             프로그래밍 학습을 위한 온라인 교육 콘텐츠를 제작하고, 학습을 진행하는 온라인 서비스를 개선 및 운영하는 업무를 하는
-                                             중입니다.</p>
-                                          <p>개발 교육 업계에서 근무하고, 또 교육과정을 직접 운영해본 경험을 바탕으로 부트캠프와 개발자 취업 준비 과정에 숨겨진 썰들을
-                                             다양하게 풀어보겠습니다! 궁금한 점 있으신 분들은 우측 하단에 카카오채널로 문의 남겨 주세요 제가 아는 한에서 성심껏 답변
-                                             드려보겠습니다 :)</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-
+         <!-- 수정시작하는부분 : 뉴스리스트-->
+         <!-- page title area start -->
+         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="/assets/img/page-title/page-title.jpg">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xxl-12">
+                     <div class="page__title-wrapper mt-110">
+                        <h3 class="page__title">뉴스</h3>                         
+                        <nav aria-label="breadcrumb">
+                           <ol class="breadcrumb">
+                              <!--홈으로 이동하기 위해 index-2로 링크-->
+                              <li class="breadcrumb-item"><a href="index-2">main</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">뉴스</li>
+                           </ol>
+                        </nav>
                      </div>
                   </div>
                </div>
-               <!-- 솔직 답변 끝 -->
-
             </div>
-         </div>
-         <!-- 솔직 질문/답변 끝 -->
+         </section>
+         <!-- page title area end -->
 
-         <!-- 새로운 답변 작성 -->
-         <div class="container padding-top ant-gap">
-            <form action="insertHR" method="post">
-               <div class="row">
-                  <div class="col-xxl-6">
-                     <div class="course__form-input">
-                        <input type="text" placeholder="Review Title">
-                     </div>
-                  </div>
-                  <div class="col-xxl-12">
-                     <div class="course__form-input">
-                        <textarea placeholder="여기에 답변을 입력해주세요."></textarea>
+         <!-- course area start -->
+         <section class="course__area pt-120 pb-120">
+            <div class="container">
+               <div class="course__tab-inner grey-bg-2 mb-50">
+                  <div class="row align-items-center">
+                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                        <div class="course__tab-wrapper d-flex align-items-center">
+                           <div class="course__tab-btn">
+                              <ul class="nav nav-tabs" id="courseTab" role="tablist">
+                                 <li class="nav-item" role="presentation">
+                                   <button class="nav-link" id="grid-tab" data-bs-toggle="tab" data-bs-target="#grid" type="button" role="tab" aria-controls="grid" aria-selected="true">
+                                    <svg class="grid" viewBox="0 0 24 24">
+                                       <rect x="3" y="3" class="st0" width="7" height="7"/>
+                                       <rect x="14" y="3" class="st0" width="7" height="7"/>
+                                       <rect x="14" y="14" class="st0" width="7" height="7"/>
+                                       <rect x="3" y="14" class="st0" width="7" height="7"/>
+                                       </svg>
+                                   </button>
+                                 </li>
+                                 <li class="nav-item" role="presentation">
+                                   <button class="nav-link list active" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button" role="tab" aria-controls="list" aria-selected="false">
+                                    <svg class="list" viewBox="0 0 512 512">
+                                       <g id="Layer_2_1_">
+                                          <path class="st0" d="M448,69H192c-17.7,0-32,13.9-32,31s14.3,31,32,31h256c17.7,0,32-13.9,32-31S465.7,69,448,69z"/>
+                                          <circle class="st0" cx="64" cy="100" r="31"/>
+                                          <path class="st0" d="M448,225H192c-17.7,0-32,13.9-32,31s14.3,31,32,31h256c17.7,0,32-13.9,32-31S465.7,225,448,225z"/>
+                                          <circle class="st0" cx="64" cy="256" r="31"/>
+                                          <path class="st0" d="M448,381H192c-17.7,0-32,13.9-32,31s14.3,31,32,31h256c17.7,0,32-13.9,32-31S465.7,381,448,381z"/>
+                                          <circle class="st0" cx="64" cy="412" r="31"/>
+                                       </g>
+                                       </svg>
+                                   </button>
+                                 </li>
+                              </ul>
+                           </div>
+                           <!-- 페이징 넣은 후에 값 가져와서 띄우기-->
+                           <div class="course__view">
+                              <h4>Showing 1 - 9 of 84</h4>
+                           </div>
+                        </div>
                      </div>
                   </div>
                </div>
                <div class="row">
                   <div class="col-xxl-12">
-                     <div class="course__form-btn mt-10 mb-55 honestChat-answer-btn">
-                        <button type="submit" class="e-btn">답변하기</button>
+                     <div class="course__tab-conent">
+                        <div class="tab-content" id="courseTabContent">
+                           <div class="tab-pane fade" id="grid" role="tabpanel" aria-labelledby="grid-tab">
+                              <div class="row">
+                                 <!-- c:forEach 구문 시작-->
+                                 <c:forEach items="${newsList}" var="news">
+                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                                    <div class="course__item white-bg mb-30 fix">
+                                       <div class="course__thumb w-img p-relative fix">
+                                          <!-- 이미지를 누를때 PK값에 맞게 해당페이지로 연결-->
+                                          <a href="news-detail?newsId=${news.newsId}">
+                                             <!-- 해당하는 이미지띄우기-->
+                                             <img src="${news.newsImg}" alt="" width='370' height='220'>
+                                          </a>
+                                       </div>
+                                       <div class="course__content">
+                                          <div class="course__meta d-flex align-items-center justify-content-between">
+                                             <!--해당하는 기사제목 띄우기, 제목누를시 해당 뉴스페이지로 들어가게하기-->
+                                             <h5><a href="news-detail?newsId=${news.newsId}">${news.newsTitle}</a></h5>
+                                          </div>
+                                       </div>
+                                       <div class="course__more d-flex justify-content-between align-items-center">
+                                          <div class="course__status">
+                                             <!--기사아래에 날짜띄우기 -> 년,월,일 방식으로-->
+                                             <span><fmt:formatDate value="${news.newsDate}" pattern="yyyy.MM.dd"/></span>
+                                          </div>
+                                          <div class="course__btn">
+                                             <!-- 자세히 보기 누를시에 해당 뉴스페이지로 이동시키기-->
+                                             <a href="news-detail?newsId=${news.newsId}" class="link-btn">
+                                                자세히보기
+                                                <i class="far fa-arrow-right"></i>
+                                                <i class="far fa-arrow-right"></i>
+                                             </a>
+                                          </div>
+                                       </div>
+                                    </div>   
+                                 </div>
+                              </c:forEach>
+                              <!-- 여러칸 형식에 쓰던 forEach문 종료-->
+                              </div>
+                           </div>
+                           <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                              <div class="row">
+                                 <!-- forEach문 시작-->
+                                 <c:forEach items="${newsList}" var="news">
+                                 <div class="col-xxl-12">
+                                    <div class="course__item white-bg mb-30 fix">
+                                       <div class="row gx-0">
+                                          <div class="col-xxl-4 col-xl-4 col-lg-4">
+                                             <div class="course__thumb course__thumb-list w-img p-relative fix">
+                                                <!--해당사진을 붙이고 사진을 누를때 해당기사페이지로 들어가게하기-->
+                                                <a href="news-detail?newsId=${news.newsId}">
+                                                   <img src="${news.newsImg}" alt="" width='370' height='260' >
+                                                </a>
+                                             </div>
+                                          </div>
+                                          <div class="col-xxl-8 col-xl-8 col-lg-8">
+                                             <div class="course__right">
+                                                <div class="course__content course__content-3">
+                                                   <h5 class="course__title course__title-3">
+                                                      <!--뉴스제목을 띄우고 누를시 해당 뉴스로 이동-->
+                                                      <a href="news-detail?newsId=${news.newsId}"><h3>${news.newsTitle}</h3></a>
+                                                   </h5>
+                                                   <div class="course__summary">
+                                                      <!-- 해당 뉴스 간략내용 출력-->
+                                                      <p><h5>${news.newsShort}</h5></p>
+                                                   </div>
+                                                </div>
+                                                <div class="course__more course__more-2 d-flex justify-content-between align-items-center">
+                                                   <div class="course__status">
+                                                      <!-- 날짜 년,월,일 형식으로 출력-->
+                                                      <span><fmt:formatDate value="${news.newsDate}" pattern="yyyy.MM.dd"/></span>
+                                                   </div>
+                                                   <div class="course__btn">
+                                                      <!-- 자세히보기 누를시에 해당 뉴스페이지로 이동시키기-->
+                                                      <a href="news-detail?newsId=${news.newsId}" class="link-btn">
+                                                         자세히보기
+                                                         <i class="far fa-arrow-right"></i>
+                                                         <i class="far fa-arrow-right"></i>
+                                                      </a>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>  
+                                 </c:forEach>   
+                                                                                                                                                                                              
+                              </div>
+                           </div>
+                         </div>
                      </div>
                   </div>
                </div>
-            </form>
-         </div>
-
+               <!-- 페이징 영역 시작 -->
+               <div class="row">
+                  <div class="col-xxl-12">
+                     <div class="basic-pagination wow fadeInUp mt-30" data-wow-delay=".2s">
+                        <ul class="d-flex align-items-center"> 
+                           <!-- first : 해당 페이지가 첫번째 페이지인지 여부(true/false로 구분)-->
+                           <!-- 해당페이지가 첫번째인 경우에는 아무것도 설정안함-->
+                           <!-- 해당 페이지가 첫번째 페이지가 아닌경우-->
+                           <!-- 맨처음페이지로 이동 -->
+                           <c:choose>
+                              <c:when test="${elist.first}"></c:when>
+                              <c:otherwise>
+                                 <li class="prev">
+                                    <a href="newsList?page=1" class="link-btn link-prev">
+                                       Prev
+                                    <i class="arrow_left"></i>
+                                    <i class="arrow_left"></i>
+                                    </a>
+                                 </li>
+                              </c:otherwise>
+                           </c:choose>
+                        <!-- 페이지 그룹 -->
+                        <!-- 시작블럭을 반복시작 인덱스로 종료블럭을 반복종료 인덱스로 설정  -->
+                           <c:forEach begin="${startBlockPage}" end="${endBlockPage}" var="i">
+                           <!-- 현재페이지의 +1이 i랑 같은 경우 다음페이지로 이동하게 설정 -->
+                           <!-- 현재페이지의 +1이 i랑 다른 경우 다음 페이지로 이동하게 설정-->
+                              <c:choose>
+                                 <c:when test="${pageNumber+1 == i}">
+                                    <li>
+                                       <a href="newsList?page=${i}"><span>${i}</span></a>
+                                    </li>
+                                 </c:when>
+                                 <c:otherwise>
+                                    <li><a href="newsList?page=${i}"><span>${i}</span></a></li>
+                                 </c:otherwise>
+                                 </c:choose>
+                              </c:forEach>
+                              <!-- 맨마지막페이지 -->
+                              <!-- last : 해당 페이지가 마지막 페이지인지 여부(true/false로 구분)-->
+                              <!-- 해당페이지가 마지막인 경우에는 아무것도 설정안함-->
+                              <!-- 해당 페이지가 마지막 페이지가 아닌경우-->
+                              <!-- 마지막페이지로 이동 -->
+                              <c:choose>     
+                                 <c:when test="${elist.last}"></c:when>
+                                 <c:otherwise>
+                                    <li class="next">
+                                       <a href="newsList?page=${totalPages}" class="link-btn">
+                                       Next
+                                       <i class="arrow_right"></i>
+                                       <i class="arrow_right"></i>
+                                       </a>
+                                    </li>
+                                 </c:otherwise>
+                              </c:choose>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <!--row의 끝-->
+            </div>
+         </section>
+         <!-- course area end -->
       </main>
-
+         
          <!-- footer area start -->
          <footer>
             <div class="footer__area footer-bg">

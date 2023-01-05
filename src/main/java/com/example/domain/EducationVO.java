@@ -19,11 +19,13 @@ public class EducationVO {
    
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
-   private Integer ed_id;
+   @Column(name="ed_id", nullable=false)
+   private Integer edId;
    
+   //찬주변경 교육과정제목
    @Column(name="ed_title", nullable=false)
    private String edTitle;
-   
+   //찬주변경 학원이름
    @Column(name="ed_name", nullable=false)
    private String edName;
    
@@ -41,5 +43,5 @@ public class EducationVO {
    private String ed_pic;
    
    @Column(name="ed_days", nullable=false)
-   private Date edDays;
+   private Date edDays; //찬주 변경 학원등록날짜
 }

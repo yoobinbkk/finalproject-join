@@ -393,20 +393,34 @@
                               <h4>Showing 1 - 9 of 84</h4>
                            </div>
                         </div>
+
+
+
+
+
+                        <!--0104 찬주 ~순 최신등록순으로 정렬 까지만 했음  -->
                         <div class="course__sort d-flex justify-content-sm-end">
                            <div class="course__sort-inner">
-                              <select>
+
+                           <form action=/academy/newSearch method="GET" role="newSearch">
+                              <select name="selectBox">
                                  <option>--선택--</option>
-                                 <option>최신순</option>
-                                 <option>인기순</option>
-                                 <option>리뷰많은순</option>
-                                 <option>별점순</option>
-                                 <option>가격순</option>
-                                 <option>Option 6</option>
+                                 <option value="list" name="">전체리스트</option>
+                                 <option value="new" name="newdate">최신 등록순</option>
+                                 <option value="star">별점 높은순</option> <!--미완-->
+                                 <option value="JJim">찜 많은순</option><!--미완-->
                               </select>
+                           </form>
+
                            </div>
                         </div>
-                     </div>
+                        <!-- 종료 부분-->
+
+                        
+
+
+
+
                      <div class="course__tab-conent">
                         <div class="tab-content" id="courseTabContent">
                            <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
@@ -415,7 +429,7 @@
                                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                     <div class="course__item white-bg mb-30 fix">
                                        <div class="course__thumb w-img p-relative fix">
-                                          <a href="course-details?ed_id=${education.ed_id}">
+                                          <a href="course-details?edId=${education.edId}">
                                              <!--해당 교육과정 관련 이미지 저장 경로 지정-->
                                              <img src="../assets/img/course/${education.ed_pic}" alt="" width='370' height='260' >
                                           </a>
@@ -434,7 +448,7 @@
                                                 <span><i class="icon_star"></i>4.5(평균해서) (44)</span>
                                              </div>
                                           </div>
-                                          <h3 class="course__title"><a href="course-details?ed_id=${education.ed_id}">${education.edTitle}</a></h3>
+                                          <h3 class="course__title"><a href="course-details?edId=${education.edId}">${education.edTitle}</a></h3>
                                           <div class="course__teacher d-flex align-items-center">
                                              <div class="course__teacher-thumb mr-15">
                                                 <img src="../assets/img/course/teacher/teacher-1.jpg" alt="">
@@ -447,7 +461,7 @@
                                              <span>${education.ed_price}원</span>
                                           </div>
                                           <div class="course__btn">
-                                             <a href="course-details?ed_id=${education.ed_id}" class="link-btn">
+                                             <a href="course-details?edId=${education.edId}" class="link-btn">
                                                 Know Details
                                                 <i class="far fa-arrow-right"></i>
                                                 <i class="far fa-arrow-right"></i>
@@ -519,45 +533,73 @@
                               </div>
                            </div>
                          </div>
-                         <div class="row">
-                           <div class="col-xxl-12">
-                              <div class="basic-pagination wow fadeInUp mt-30" data-wow-delay=".2s">
-                                 <ul class="d-flex align-items-center"> 
-                                    <li class="prev">
-                                       <a href="course-grid" class="link-btn link-prev">
-                                          Prev
-                                          <i class="arrow_left"></i>
-                                          <i class="arrow_left"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                       <a href="course-grid">
-                                          <span>1</span>
-                                       </a>
-                                    </li>
-                                    <li class="active">
-                                       <a href="course-grid">
-                                          <span>2</span>
-                                       </a>
-                                    </li>
-                                    <li>
-                                       <a href="product">
-                                          <span>3</span>
-                                       </a>
-                                    </li>
-                                    <li class="next">
-                                       <a href="course-grid" class="link-btn">
-                                          Next
-                                          <i class="arrow_right"></i>
-                                          <i class="arrow_right"></i>
-                                       </a>
-                                    </li>
-                                 </ul>
+
+
+
+
+                  
+                             <!-- 페이징 영역 시작  경호형꺼 받음 0104-->
+                             <div class="row">
+                              <div class="col-xxl-12">
+                                 <div class="basic-pagination wow fadeInUp mt-30" data-wow-delay=".2s">
+                                    <ul class="d-flex align-items-center"> 
+                                       <!-- first : 해당 페이지가 첫번째 페이지인지 여부(true/false로 구분)-->
+                                       <!-- 해당페이지가 첫번째인 경우에는 아무것도 설정안함-->
+                                       <!-- 해당 페이지가 첫번째 페이지가 아닌경우-->
+                                       <!-- 맨처음페이지로 이동 -->
+                                       <c:choose>
+                                       <c:when test="${elist.first}"></c:when>
+                                       
+                                       <c:otherwise>
+                                       <li class="prev">
+                                          <a href="course-sidebar?page=1" class="link-btn link-prev">
+                                             Prev
+                                             <i class="arrow_left"></i>
+                                             <i class="arrow_left"></i>
+                                          </a>
+                                       </li>
+                                    </c:otherwise>
+                                 </c:choose>
+   
+                              <!-- 페이지 그룹 -->
+                              <!-- 시작블럭을 반복시작 인덱스로 종료블럭을 반복종료 인덱스로 설정  -->
+                              <c:forEach begin="${startBlockPage}" end="${endBlockPage}" var="i">
+                              <!-- 현재페이지의 +1이 i랑 같은 경우 다음페이지로 이동하게 설정 -->
+                              <!-- 현재페이지의 +1이 i랑 다른 경우 다음 페이지로 이동하게 설정-->
+                              <c:choose>
+                              <c:when test="${pageNumber+1 == i}">
+                                 <li>
+                                    <a href="course-sidebar?page=${i}"><span>${i}</span></a>
+                                 </li>
+                              </c:when>
+                              <c:otherwise>
+                                 <li><a href="course-sidebar?page=${i}"><span>${i}</span></a></li>
+                              </c:otherwise>
+                              </c:choose>
+                              </c:forEach>
+                              <!-- 맨마지막페이지 -->
+                              <!-- last : 해당 페이지가 마지막 페이지인지 여부(true/false로 구분)-->
+                              <!-- 해당페이지가 마지막인 경우에는 아무것도 설정안함-->
+                              <!-- 해당 페이지가 마지막 페이지가 아닌경우-->
+                              <!-- 마지막페이지로 이동 -->
+                              <c:choose>     
+                              <c:when test="${elist.last}"></c:when>
+                              <c:otherwise>
+                                 <li class="next">
+                                    <a href="course-sidebar?page=${totalPages}" class="link-btn">
+                                    Next
+                                    <i class="arrow_right"></i>
+                                    <i class="arrow_right"></i>
+                                    </a>
+                                 </li>
+                              </c:otherwise>
+                              </c:choose>
+                                    </ul>
+                                 </div>
                               </div>
                            </div>
                         </div>
                      </div>
-                  </div>
                   <div class="col-xxl-4 col-xl-4 col-lg-4">
                      <div class="course__sidebar pl-70">
                         
@@ -809,6 +851,7 @@
       <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
       <script src="../assets/js/main.js"></script>
       <script src="../assets/js/search.js"></script><!--0103 카테고리 검색용 추가 찬주-->
+      <script src="../assets/js/jquerySelectBox.js"></script><!--0104 셀렉박스 추가 찬주-->
    </body>
 </html>
 
