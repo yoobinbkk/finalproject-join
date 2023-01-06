@@ -456,7 +456,7 @@
                               <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
                                  <div class="course__curriculum">
                                     <c:forEach items="${title}" var="i" step="3" varStatus="status" >
-                                    <div class="accordion" id="course__accordion${i}">
+                                    <div class="accordion" id="course__accordion">
                                           <div class="accordion-item mb-20">
                                              <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#${title[status.index-3]}-content" aria-expanded="true"

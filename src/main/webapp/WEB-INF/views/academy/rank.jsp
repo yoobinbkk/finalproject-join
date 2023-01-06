@@ -1,30 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-
-
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
    <head>
+      <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Educal – Online Learning and Education HTML5 Template </title>
+      <title>랭킹페이지</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
-      <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+      <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.png">
       <!-- CSS here -->
-      <link rel="stylesheet" href="assets/css/preloader.css">
-      <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-      <link rel="stylesheet" href="assets/css/meanmenu.css">
-      <link rel="stylesheet" href="assets/css/animate.min.css">
-      <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-      <link rel="stylesheet" href="assets/css/swiper-bundle.css">
-      <link rel="stylesheet" href="assets/css/backToTop.css">
-      <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
-      <link rel="stylesheet" href="assets/css/fontAwesome5Pro.css">
-      <link rel="stylesheet" href="assets/css/elegantFont.css">
-      <link rel="stylesheet" href="assets/css/default.css">
-      <link rel="stylesheet" href="assets/css/style.css">      
+      <link rel="stylesheet" href="/assets/css/preloader.css">
+      <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/assets/css/meanmenu.css">
+      <link rel="stylesheet" href="/assets/css/animate.min.css">
+      <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="/assets/css/swiper-bundle.css">
+      <link rel="stylesheet" href="/assets/css/backToTop.css">
+      <link rel="stylesheet" href="/assets/css/jquery.fancybox.min.css">
+      <link rel="stylesheet" href="/assets/css/fontAwesome5Pro.css">
+      <link rel="stylesheet" href="/assets/css/elegantFont.css">
+      <link rel="stylesheet" href="/assets/css/default.css">
+      <link rel="stylesheet" href="/assets/css/style.css">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -38,9 +37,9 @@
          <div id="loading-center">
             <div id="loading-center-absolute">
                <div class="loading-content">
-                  <img class="loading-logo-text" src="assets/img/logo/logo-text-2.png" alt="">
+                  <img class="loading-logo-text" src="/assets/img/logo/logo-text-2.png" alt="">
                   <div class="loading-stroke">
-                     <img class="loading-logo-icon" src="assets/img/logo/logo-icon.png" alt="">
+                     <img class="loading-logo-icon" src="/assets/img/logo/logo-icon.png" alt="">
                   </div>
                </div>
             </div>
@@ -58,14 +57,14 @@
 
       <!-- header area start -->
       <header>
-         <div id="header-sticky" class="header__area header__padding-2 header__shadow">
-            <div class="container">
+         <div id="header-sticky" class="header__area header__transparent header__padding">
+            <div class="container-fluid">
                <div class="row align-items-center">
                   <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-4 col-6">
                      <div class="header__left d-flex">
                         <div class="logo">
                            <a href="index">
-                              <img src="assets/img/logo/logo.png" alt="logo">
+                              <img src="/assets/img/logo/logo.png" alt="logo">
                            </a>
                         </div>
                         <div class="header__category d-none d-lg-block">
@@ -107,7 +106,7 @@
                   </div>
                   <div class="col-xxl-9 col-xl-9 col-lg-8 col-md-10 col-sm-8 col-6">
                      <div class="header__right d-flex justify-content-end align-items-center">
-                        <div class="main-menu main-menu-2">
+                        <div class="main-menu">
                            <nav id="mobile-menu">
                               <ul>
                                  <li class="has-dropdown">
@@ -153,8 +152,26 @@
                               </ul>
                            </nav>
                         </div>
-                        <div class="header__btn header__btn-2 ml-50 d-none d-sm-block">
-                           <a href="sign-up" class="e-btn">Sign up</a>
+                        <div class="header__search p-relative ml-50 d-none d-md-block">
+                           <form action="#">
+                              <input type="text" placeholder="Search...">
+                              <button type="submit"><i class="fad fa-search"></i></button>
+                           </form>
+                           <div class="header__cart">
+                              <a href="javascript:void(0);" class="cart-toggle-btn">
+                                 <div class="header__cart-icon">
+                                    <svg viewBox="0 0 24 24">
+                                       <circle class="st0" cx="9" cy="21" r="1"/>
+                                       <circle class="st0" cx="20" cy="21" r="1"/>
+                                       <path class="st0" d="M1,1h4l2.7,13.4c0.2,1,1,1.6,2,1.6h9.7c1,0,1.8-0.7,2-1.6L23,6H6"/>
+                                    </svg>
+                                 </div>
+                                 <span class="cart-item">2</span>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="header__btn ml-20 d-none d-sm-block">
+                           <a href="contact" class="e-btn">Try for free</a>
                         </div>
                         <div class="sidebar__menu d-xl-none">
                            <div class="sidebar-toggle-btn ml-30" id="sidebar-toggle">
@@ -186,7 +203,7 @@
                      <li>
                         <div class="cartmini__thumb">
                            <a href="#">
-                              <img src="assets/img/course/sm/cart-1.jpg" alt="">
+                              <img src="/assets/img/course/sm/cart-1.jpg" alt="">
                            </a>
                         </div>
                         <div class="cartmini__content">
@@ -205,7 +222,7 @@
                      <li>
                         <div class="cartmini__thumb">
                            <a href="#">
-                              <img src="assets/img/course/sm/cart-2.jpg" alt="">
+                              <img src="/assets/img/course/sm/cart-2.jpg" alt="">
                            </a>
                         </div>
                         <div class="cartmini__content">
@@ -224,7 +241,7 @@
                      <li>
                         <div class="cartmini__thumb">
                            <a href="#">
-                              <img src="assets/img/course/sm/cart-3.jpg" alt="">
+                              <img src="/assets/img/course/sm/cart-3.jpg" alt="">
                            </a>
                         </div>
                         <div class="cartmini__content">
@@ -271,7 +288,7 @@
             <div class="sidebar__content">
                <div class="logo mb-40">
                   <a href="index">
-                  <img src="assets/img/logo/logo.png" alt="logo">
+                  <img src="/assets/img/logo/logo.png" alt="logo">
                   </a>
                </div>
                <div class="mobile-menu fix"></div>
@@ -300,84 +317,151 @@
       <!-- sidebar area end -->      
       <div class="body-overlay"></div>
       <!-- sidebar area end -->
-
-      <!-- 메인페이지 시작 -->
+      <br/>
       <main>
-
-         <!-- sign up area start -->
-         <section class="signup__area po-rel-z1 pt-100 pb-145">
-            <div class="sign__shape">
-               <img class="man-1" src="assets/img/icon/sign/man-1.png" alt="">
-               <img class="man-2" src="assets/img/icon/sign/man-2.png" alt="">
-               <img class="circle" src="assets/img/icon/sign/circle.png" alt="">
-               <img class="zigzag" src="assets/img/icon/sign/zigzag.png" alt="">
-               <img class="dot" src="assets/img/icon/sign/dot.png" alt="">
-               <img class="bg" src="assets/img/icon/sign/sign-up.png" alt="">
-            </div>
+         <!-- 1~3위까지 랭킹 -->
+         <section class="blog__area pt-115 pb-130">
             <div class="container">
                <div class="row">
-                  <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
-                     <div class="section__title-wrapper text-center mb-55">
-                        <h2 class="section__title">Sign in to <br>  recharge direct.</h2>
-                        <p>it you don't have an account you can <a href="#">Register here!</a></p>
+                  <div class="col-xxl-6 offset-xxl-3">
+                     <div class="section__title-wrapper text-center mb-60">
+                        <h2 class="section__title">이달의
+                           <span class="yellow-bg yellow-bg-big">부트캠프 랭킹<img src="/assets/img/shape/yellow-bg.png" alt=""></span>
+                        </h2>
+                        <p>You don't have to struggle alone, you've got our assistance and help.</p>
                      </div>
                   </div>
                </div>
                <div class="row">
-                  <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                     <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                           <div class="sign__in text-center">
-                              <a href="#" class="sign__social text-start mb-15"><i class="fab fa-facebook-f"></i>Sign in with Facebook</a>
-                              <p> <span>........</span> Or, <a href="sign-in">sign in</a> with your email<span> ........</span> </p>
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                     <div class="blog__item white-bg mb-30 transition-3 fix">
+                        <div class="blog__thumb w-img fix">
+                           <a href="blog-details.html">
+                              <img src="/assets/img/blog/blog-1.jpg" alt="" width='100' height='260'>
+                           </a>
+                        </div>
+                        <div class="blog__content">
+                           <div class="blog__tag">
+                              <a href="#">Art &amp; Design</a>
+                           </div>
+                           <h3 class="blog__title"><a href="blog-details.html">The Challenge Of Global Learning In Public Education</a></h3>
+
+                           <div class="blog__meta d-flex align-items-center justify-content-between">
+                              <div class="blog__author d-flex align-items-center">
+                                 <div class="blog__author-thumb mr-10">
+                                    <img src="/assets/img/blog/author/author-1.jpg" alt="">
+                                 </div>
+                                 <div class="blog__author-info">
+                                    <h5>Jim Séchen</h5>
+                                 </div>
+                              </div>
+                              <div class="blog__date d-flex align-items-center">
+                                 <i class="fal fa-clock"></i>
+                                 <span>April 02, 2022</span>
+                              </div>
                            </div>
                         </div>
-                        <div class="sign__form">
-                           <!-- bk 로그인 버튼 액션 -->
-                           <form action="loginMember" type="post">
-                              <div class="sign__input-wrapper mb-25">
-                                 <h5>ID</h5>
-                                 <div class="sign__input">
-                                    <input type="text" placeholder="ID" id="m_id" name="memId">
-                                    <i class="fal fa-user"></i>
+                     </div>
+                  </div>
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                     <div class="blog__item white-bg mb-30 transition-3 fix">
+                        <div class="blog__thumb w-img fix">
+                           <a href="blog-details.html">
+                              <img src="/assets/img/blog/blog-2.jpg" alt="" width='100' height='260'>
+                           </a>
+                        </div>
+                        <div class="blog__content">
+                           <div class="blog__tag">
+                              <a href="#" class="purple">Marketing</a>
+                           </div>
+                           <h3 class="blog__title"><a href="blog-details.html">Exactly How Technology Can Make Reading Better</a></h3>
+
+                           <div class="blog__meta d-flex align-items-center justify-content-between">
+                              <div class="blog__author d-flex align-items-center">
+                                 <div class="blog__author-thumb mr-10">
+                                    <img src="/assets/img/blog/author/author-2.jpg" alt="">
+                                 </div>
+                                 <div class="blog__author-info">
+                                    <h5>Barry Tone</h5>
                                  </div>
                               </div>
-                              <div class="sign__input-wrapper mb-10">
-                                 <h5>Password</h5>
-                                 <div class="sign__input">
-                                    <input type="password" placeholder="Password" id="m_pass" name="memPass">
-                                    <i class="fal fa-lock"></i>
+                              <div class="blog__date d-flex align-items-center">
+                                 <i class="fal fa-clock"></i>
+                                 <span>July 02, 2022</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                     <div class="blog__item white-bg mb-30 transition-3 fix">
+                        <div class="blog__thumb w-img fix">
+                           <a href="blog-details.html">
+                              <img src="/assets/img/blog/blog-3.jpg" alt="" width='100' height='260'>
+                           </a>
+                        </div>
+                        <div class="blog__content">
+                           <div class="blog__tag">
+                              <a href="#" class="pink">UX Design</a>
+                           </div>
+                           <h3 class="blog__title"><a href="blog-details.html">New Chicago school budget relies on state pension</a></h3>
+
+                           <div class="blog__meta d-flex align-items-center justify-content-between">
+                              <div class="blog__author d-flex align-items-center">
+                                 <div class="blog__author-thumb mr-10">
+                                    <img src="/assets/img/blog/author/author-3.jpg" alt="">
+                                 </div>
+                                 <div class="blog__author-info">
+                                    <h5>Barry Tone</h5>
                                  </div>
                               </div>
-                              <div class="sign__action d-sm-flex justify-content-between mb-30">
-                                 <div class="sign__agree d-flex align-items-center">
-                                    <input class="m-check-input" type="checkbox" id="m-agree">
-                                    <label class="m-check-label" for="m-agree">Keep me signed in
-                                       </label>
-                                 </div>
-                                 <div class="sign__forgot">
-                                    <a href="findIdPw">계정 / 비밀번호 찾기</a>
-                                 </div>
+                              <div class="blog__date d-flex align-items-center">
+                                 <i class="fal fa-clock"></i>
+                                 <span>July 02, 2022</span>
                               </div>
-                              <button class="e-btn  w-100" type="submit"> <span></span> Sign In</button>
-                              <div class="sign__new text-center mt-20">
-                                 <p>New to Markit? <a href="sign-up">Sign Up</a></p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- 4위부터 아래부분 -->
+               <br/>
+               <div class="container">
+                  
+                  <div class="row">
+                     <div class="col-xxl-10 offset-xxl-1 col-xl-10 offset-xl-1 col-lg-10 offset-lg-1">
+                        <div class="events__item mb-10 hover__active">
+                           <div class="events__item-inner d-sm-flex align-items-center justify-content-between white-bg" style="margin-left: -11%; margin-right: -11%;">
+                              <div class="events__content">
+                                 <h4>4</h4>
+                                 <div class="events__meta">
+                                    <span>자바, 파이썬</span>
+                                    <span>1월 6일 ~ 1월 30일</span>
+                                    <span>한국소프트웨어인재개발원</span>
+                                 </div>
+                                 <h3 class="events__title"><a href="event-details.html">ELK 활용 빅데이터, 자바, Spring 교육</a></h3>
                               </div>
-                           </form>
+                              <div class="events__more">
+                                 <a href="event-details.html" class="link-btn">
+                                    View More
+                                    <i class="far fa-arrow-right"></i>
+                                    <i class="far fa-arrow-right"></i>
+                                 </a>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-         <!-- sign up area end -->
-         
       </main>
-
+      
          <!-- footer area start -->
          <footer>
             <div class="footer__area footer-bg">
-               <div class="footer__top pt-90 pb-40">
+               <div class="footer__top pt-190 pb-40">
                   <div class="container">
                      <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
@@ -385,7 +469,7 @@
                               <div class="footer__widget-head mb-22">
                                  <div class="footer__logo">
                                     <a href="index">
-                                       <img src="assets/img/logo/logo-2.png" alt="">
+                                       <img src="/assets/img/logo/logo-2.png" alt="">
                                     </a>
                                  </div>
                               </div>
@@ -480,22 +564,21 @@
          </footer>
          <!-- footer area end -->
       <!-- JS here -->
-      <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
-      <script src="assets/js/vendor/waypoints.min.js"></script>
-      <script src="assets/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/jquery.meanmenu.js"></script>
-      <script src="assets/js/swiper-bundle.min.js"></script>
-      <script src="assets/js/owl.carousel.min.js"></script>
-      <script src="assets/js/jquery.fancybox.min.js"></script>
-      <script src="assets/js/isotope.pkgd.min.js"></script>
-      <script src="assets/js/parallax.min.js"></script>
-      <script src="assets/js/backToTop.js"></script>
-      <script src="assets/js/jquery.counterup.min.js"></script>
-      <script src="assets/js/ajax-form.js"></script>
-      <script src="assets/js/wow.min.js"></script>
-      <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-      <script src="assets/js/main.js"></script>
-      
+      <script src="/assets/js/vendor/jquery-3.5.1.min.js"></script>
+      <script src="/assets/js/vendor/waypoints.min.js"></script>
+      <script src="/assets/js/bootstrap.bundle.min.js"></script>
+      <script src="/assets/js/jquery.meanmenu.js"></script>
+      <script src="/assets/js/swiper-bundle.min.js"></script>
+      <script src="/assets/js/owl.carousel.min.js"></script>
+      <script src="/assets/js/jquery.fancybox.min.js"></script>
+      <script src="/assets/js/isotope.pkgd.min.js"></script>
+      <script src="/assets/js/parallax.min.js"></script>
+      <script src="/assets/js/backToTop.js"></script>
+      <script src="/assets/js/jquery.counterup.min.js"></script>
+      <script src="/assets/js/ajax-form.js"></script>
+      <script src="/assets/js/wow.min.js"></script>
+      <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+      <script src="/assets/js/main.js"></script>
    </body>
 </html>
 

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-
+    
 
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -24,7 +24,10 @@
       <link rel="stylesheet" href="assets/css/fontAwesome5Pro.css">
       <link rel="stylesheet" href="assets/css/elegantFont.css">
       <link rel="stylesheet" href="assets/css/default.css">
-      <link rel="stylesheet" href="assets/css/style.css">      
+      <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="stylesheet" href="assets/css/loginStyle.css">
+
+
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -301,201 +304,203 @@
       <div class="body-overlay"></div>
       <!-- sidebar area end -->
 
-      <!-- 메인페이지 시작 -->
-      <main>
+<!-- 메인 시작-->
+<main>
+  <!-- 뒷 배경 그림들-->
+  <div class="hero__shape">
+    <img class="hero-1-circle" src="assets/img/shape/hero/hero-1-circle.png" alt="">
+    <img class="hero-1-circle-2" src="assets/img/shape/hero/hero-1-circle-2.png" alt="">
+    <img class="hero-1-dot-2" src="assets/img/shape/hero/hero-1-dot-2.png" alt="">
+ </div>  
+<div class="add-area mb-100"></div>
+<div class="container1" id="container1" style="">
+  <div class="form-container sign-up-container">
+  <div id="signup">
+    <form class="form" action="#" method="post" id="pwForm">
+    <div class="social-container"></div>
+    <div class="social-container"></div>
+      <h1 >Find Password</h1>
+      <div class="social-container">
 
-         <!-- sign up area start -->
-         <section class="signup__area po-rel-z1 pt-100 pb-145">
-            <div class="sign__shape">
-               <img class="man-1" src="assets/img/icon/sign/man-1.png" alt="">
-               <img class="man-2" src="assets/img/icon/sign/man-2.png" alt="">
-               <img class="circle" src="assets/img/icon/sign/circle.png" alt="">
-               <img class="zigzag" src="assets/img/icon/sign/zigzag.png" alt="">
-               <img class="dot" src="assets/img/icon/sign/dot.png" alt="">
-               <img class="bg" src="assets/img/icon/sign/sign-up.png" alt="">
-            </div>
-            <div class="container">
-               <div class="row">
-                  <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
-                     <div class="section__title-wrapper text-center mb-55">
-                        <h2 class="section__title">Sign in to <br>  recharge direct.</h2>
-                        <p>it you don't have an account you can <a href="#">Register here!</a></p>
+      </div>
+                  
+      <input class="input" id="reg_id" name='memId' type="text" placeholder="아이디"  required="required"/>
+      <br/>
+      <input class="input" id="reg_email" name='memEmail' type="email" placeholder="이메일" required="required"/>
+
+      
+      <div class="social-container"></div>     
+      <!--비밀번호 찾기 기능 걸려있는 버튼-->
+      <button class="button" id="findPw" >비밀번호 찾기</button>
+      <p/>
+    </form>
+    </div>
+  </div>
+  <div class="form-container sign-in-container" >
+    <form class="form" method="post" id="idForm">
+      <h1>Find ID</h1>
+      <div class="social-container">
+      </div>
+      <tr/>     
+      <input class="input" id="reg_name" name='memName' type="text" placeholder="이름" required="required"/>
+      <br/>
+      <input class="input" id="reg_pNum"  name='memTel' type="text" placeholder="연락처 (ex.010-1234-5678)" required="required"/>
+      <div class="social-container"></div>
+      <!--아이디 찾기 기능 걸려있는 버튼-->
+      <button type="button" class="button" id="findId">아이디 찾기</button><p></p>
+            
+      
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left" >
+        <img src="assets/img/logo/pw3.gif" >
+        <img src="assets/img/logo/logo.png" alt="logo">
+        <p class="p">Forgot your ID?</p>
+        <button class="button" id="signIn">아이디 찾기</button>
+      </div>
+      <div class="overlay-panel overlay-right" >
+        <img src="assets/img/logo/pw2.gif" >
+        <img src="assets/img/logo/logo.png" alt="logo">
+        <p class="p">Forgot your password?</p>
+        <button class="button" id="signUp">비밀번호 찾기</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="add-area mb-100"></div>
+
+
+</main>
+
+<!-- footer area start -->
+<footer>
+   <div class="footer__area footer-bg">
+      <div class="footer__top pt-90 pb-40">
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                  <div class="footer__widget mb-50">
+                     <div class="footer__widget-head mb-22">
+                        <div class="footer__logo">
+                           <a href="index">
+                              <img src="assets/img/logo/logo-2.png" alt="">
+                           </a>
+                        </div>
+                     </div>
+                     <div class="footer__widget-body">
+                        <p>Great lesson ideas and lesson plans for ESL teachers! Educators can customize lesson plans to best.</p>
+
+                        <div class="footer__social">
+                           <ul>
+                              <li><a href="#"><i class="social_facebook"></i></a></li>
+                              <li><a href="#" class="tw"><i class="social_twitter"></i></a></li>
+                              <li><a href="#" class="pin"><i class="social_pinterest"></i></a></li>
+                           </ul>
+                        </div>
                      </div>
                   </div>
                </div>
-               <div class="row">
-                  <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                     <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                           <div class="sign__in text-center">
-                              <a href="#" class="sign__social text-start mb-15"><i class="fab fa-facebook-f"></i>Sign in with Facebook</a>
-                              <p> <span>........</span> Or, <a href="sign-in">sign in</a> with your email<span> ........</span> </p>
-                           </div>
+               <div class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1">
+                  <div class="footer__widget mb-50">
+                     <div class="footer__widget-head mb-22">
+                        <h3 class="footer__widget-title">Company</h3>
+                     </div>
+                     <div class="footer__widget-body">
+                        <div class="footer__link">
+                           <ul>
+                              <li><a href="#">About</a></li>
+                              <li><a href="#">Courses</a></li>
+                              <li><a href="#">Events</a></li>
+                              <li><a href="#">Instructor</a></li>
+                              <li><a href="#">Career</a></li>
+                              <li><a href="#">Become a Teacher</a></li>
+                              <li><a href="#">Contact</a></li>
+                           </ul>
                         </div>
-                        <div class="sign__form">
-                           <!-- bk 로그인 버튼 액션 -->
-                           <form action="loginMember" type="post">
-                              <div class="sign__input-wrapper mb-25">
-                                 <h5>ID</h5>
-                                 <div class="sign__input">
-                                    <input type="text" placeholder="ID" id="m_id" name="memId">
-                                    <i class="fal fa-user"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__input-wrapper mb-10">
-                                 <h5>Password</h5>
-                                 <div class="sign__input">
-                                    <input type="password" placeholder="Password" id="m_pass" name="memPass">
-                                    <i class="fal fa-lock"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__action d-sm-flex justify-content-between mb-30">
-                                 <div class="sign__agree d-flex align-items-center">
-                                    <input class="m-check-input" type="checkbox" id="m-agree">
-                                    <label class="m-check-label" for="m-agree">Keep me signed in
-                                       </label>
-                                 </div>
-                                 <div class="sign__forgot">
-                                    <a href="findIdPw">계정 / 비밀번호 찾기</a>
-                                 </div>
-                              </div>
-                              <button class="e-btn  w-100" type="submit"> <span></span> Sign In</button>
-                              <div class="sign__new text-center mt-20">
-                                 <p>New to Markit? <a href="sign-up">Sign Up</a></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
+                  <div class="footer__widget mb-50">
+                     <div class="footer__widget-head mb-22">
+                        <h3 class="footer__widget-title">Platform</h3>
+                     </div>
+                     <div class="footer__widget-body">
+                        <div class="footer__link">
+                           <ul>
+                              <li><a href="#">Browse Library</a></li>
+                              <li><a href="#">Library</a></li>
+                              <li><a href="#">Partners</a></li>
+                              <li><a href="#">News & Blogs</a></li>
+                              <li><a href="#">FAQs</a></li>
+                              <li><a href="#">Tutorials</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-6">
+                  <div class="footer__widget footer__pl-70 mb-50">
+                     <div class="footer__widget-head mb-22">
+                        <h3 class="footer__widget-title">Subscribe</h3>
+                     </div>
+                     <div class="footer__widget-body">
+                        <div class="footer__subscribe">
+                           <form action="#">
+                              <div class="footer__subscribe-input mb-15">
+                                 <input type="email" placeholder="Your email address">
+                                 <button type="submit">
+                                    <i class="far fa-arrow-right"></i>
+                                    <i class="far fa-arrow-right"></i>
+                                 </button>
                               </div>
                            </form>
+                           <p>Get the latest news and updates right at your inbox.</p>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-         </section>
-         <!-- sign up area end -->
-         
-      </main>
-
-         <!-- footer area start -->
-         <footer>
-            <div class="footer__area footer-bg">
-               <div class="footer__top pt-90 pb-40">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                           <div class="footer__widget mb-50">
-                              <div class="footer__widget-head mb-22">
-                                 <div class="footer__logo">
-                                    <a href="index">
-                                       <img src="assets/img/logo/logo-2.png" alt="">
-                                    </a>
-                                 </div>
-                              </div>
-                              <div class="footer__widget-body">
-                                 <p>Great lesson ideas and lesson plans for ESL teachers! Educators can customize lesson plans to best.</p>
-
-                                 <div class="footer__social">
-                                    <ul>
-                                       <li><a href="#"><i class="social_facebook"></i></a></li>
-                                       <li><a href="#" class="tw"><i class="social_twitter"></i></a></li>
-                                       <li><a href="#" class="pin"><i class="social_pinterest"></i></a></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-5 offset-sm-1">
-                           <div class="footer__widget mb-50">
-                              <div class="footer__widget-head mb-22">
-                                 <h3 class="footer__widget-title">Company</h3>
-                              </div>
-                              <div class="footer__widget-body">
-                                 <div class="footer__link">
-                                    <ul>
-                                       <li><a href="#">About</a></li>
-                                       <li><a href="#">Courses</a></li>
-                                       <li><a href="#">Events</a></li>
-                                       <li><a href="#">Instructor</a></li>
-                                       <li><a href="#">Career</a></li>
-                                       <li><a href="#">Become a Teacher</a></li>
-                                       <li><a href="#">Contact</a></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-xxl-2 col-xl-2 col-lg-2 offset-lg-0 col-md-3 offset-md-1 col-sm-6">
-                           <div class="footer__widget mb-50">
-                              <div class="footer__widget-head mb-22">
-                                 <h3 class="footer__widget-title">Platform</h3>
-                              </div>
-                              <div class="footer__widget-body">
-                                 <div class="footer__link">
-                                    <ul>
-                                       <li><a href="#">Browse Library</a></li>
-                                       <li><a href="#">Library</a></li>
-                                       <li><a href="#">Partners</a></li>
-                                       <li><a href="#">News & Blogs</a></li>
-                                       <li><a href="#">FAQs</a></li>
-                                       <li><a href="#">Tutorials</a></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-6">
-                           <div class="footer__widget footer__pl-70 mb-50">
-                              <div class="footer__widget-head mb-22">
-                                 <h3 class="footer__widget-title">Subscribe</h3>
-                              </div>
-                              <div class="footer__widget-body">
-                                 <div class="footer__subscribe">
-                                    <form action="#">
-                                       <div class="footer__subscribe-input mb-15">
-                                          <input type="email" placeholder="Your email address">
-                                          <button type="submit">
-                                             <i class="far fa-arrow-right"></i>
-                                             <i class="far fa-arrow-right"></i>
-                                          </button>
-                                       </div>
-                                    </form>
-                                    <p>Get the latest news and updates right at your inbox.</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="footer__bottom">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-xxl-12">
-                           <div class="footer__copyright text-center">
-                              <p>© 2022 Educal, All Rights Reserved. Design By <a href="index">Theme Pure</a></p>
-                           </div>
-                        </div>
-                     </div>
+         </div>
+      </div>
+      <div class="footer__bottom">
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="footer__copyright text-center">
+                     <p>© 2022 Educal, All Rights Reserved. Design By <a href="index">Theme Pure</a></p>
                   </div>
                </div>
             </div>
-         </footer>
-         <!-- footer area end -->
-      <!-- JS here -->
-      <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
-      <script src="assets/js/vendor/waypoints.min.js"></script>
-      <script src="assets/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/jquery.meanmenu.js"></script>
-      <script src="assets/js/swiper-bundle.min.js"></script>
-      <script src="assets/js/owl.carousel.min.js"></script>
-      <script src="assets/js/jquery.fancybox.min.js"></script>
-      <script src="assets/js/isotope.pkgd.min.js"></script>
-      <script src="assets/js/parallax.min.js"></script>
-      <script src="assets/js/backToTop.js"></script>
-      <script src="assets/js/jquery.counterup.min.js"></script>
-      <script src="assets/js/ajax-form.js"></script>
-      <script src="assets/js/wow.min.js"></script>
-      <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-      <script src="assets/js/main.js"></script>
-      
-   </body>
+         </div>
+      </div>
+   </div>
+</footer>
+<!-- footer area end -->
+<!-- JS here -->
+<script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
+<script src="assets/js/vendor/waypoints.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.meanmenu.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.fancybox.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/parallax.min.js"></script>
+<script src="assets/js/backToTop.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/ajax-form.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/login.js"></script>
+<script src="assets/js/findIdPw.js"></script>
+
+<!-- sweet alert창 -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+</body>
 </html>
-
