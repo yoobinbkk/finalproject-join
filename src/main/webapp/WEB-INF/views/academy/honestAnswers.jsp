@@ -462,7 +462,7 @@
          <div class="container padding-top ant-gap">
             <form action="insertHR" method="post">
                <div class="row">
-                  <div class="col-xxl-6">
+                  <div class="col-xs-8 col-sm-8 col-md-7 col-lg-7 col-xl-6 col-xxl-6">
                      <div class="course__form-input">
                         <input type="text" placeholder="Review Title">
                      </div>
@@ -476,7 +476,7 @@
                <div class="row">
                   <div class="col-xxl-12">
                      <div class="course__form-btn mt-10 mb-55 honestChat-answer-btn">
-                        <button type="submit" class="e-btn">답변하기</button>
+                        <button type="submit" class="e-btn honestChat-answer-btn">답변하기</button>
                      </div>
                   </div>
                </div>
