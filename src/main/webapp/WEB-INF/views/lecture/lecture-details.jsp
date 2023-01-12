@@ -27,7 +27,6 @@
       <link rel="stylesheet" href="../assets/css/elegantFont.css">
       <link rel="stylesheet" href="../assets/css/default.css">
       <link rel="stylesheet" href="../assets/css/style.css">
-      <link rel="stylesheet" href="../assets/css/allcss.css">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -313,7 +312,7 @@
                <img class="page-title-shape-6" src="../assets/img/page-title/page-title-shape-6.png" alt="">
                <img class="page-title-shape-7" src="../assets/img/page-title/page-title-shape-4.png" alt="">
             </div>
-            <div class="container" id = details>
+            <div class="container">
                <div class="row">
                   <div class="col-xxl-8 col-xl-8 col-lg-8">
                      <div class="course__wrapper">
@@ -323,14 +322,14 @@
                                  <ol class="breadcrumb">
                                    <li class="breadcrumb-item"><a href="index">Home</a></li>
                                    <li class="breadcrumb-item"><a href="course-grid">Courses</a></li>
-                                   <li class="breadcrumb-item active" aria-current="page">${education.edTitle}</li>
+                                   <li class="breadcrumb-item active" aria-current="page">${lecture.vcTitle}</li>
                                  </ol>
                                </nav>
                            </div>
                              <!-- 국비인지 부트인지-->
                            <span class="page__title-pre">Development</span>
                              <!-- 교육과정 이름-->
-                           <h5 class="page__title-3">${education.edTitle}</h5>
+                           <h5 class="page__title-3">${lecture.vcTitle}</h5>
                         </div>
                         <div class="course__meta-2 d-sm-flex">
                            <div class="course__teacher-3 d-flex align-items-center mr-70 mb-20">
@@ -339,16 +338,12 @@
                                  <img src="../assets/img/course/teacher/teacher-1.jpg" alt="">
                               </div>
                               <div class="course__teacher-info-3">
-                                 <h5>학원이름</h5>
+                                 <h5>선생님이름</h5>
                                    <!--누르면 학원 상세페이지로 이동 -->
-                                 <p><a href="#">${education.edName}</a></p>
+                                 <p><a href="#">선생님이름</a></p>
                               </div>
                            </div>
-                           <div class="course__update mr-80 mb-20">
-                              <h5>교육과정 기간</h5>
-                                <!--날짜의 값이 들어가도록 세팅 -->
-                              <p><fmt:formatDate value="${education.ed_start_date}" pattern="yyyy.MM.dd" /> ~ <fmt:formatDate value="${education.ed_end_date}" pattern="yyyy.MM.dd" /> </p>
-                           </div>
+                           
 
                            
                          
@@ -357,7 +352,7 @@
                               <h5>별점:</h5>
                               <div class="course__rating-inner d-flex align-items-center">
                               <c:forEach var="avg" items="${avg}">  
-                                 <c:if test="${avg[0] == education.edId}" >  
+                                 <c:if test="${avg[0] == lecture.vcId}" >  
                                  <c:if test="${avg[1] == 1}">
                                     <img src="../assets/img/star/1s.png">
                               </c:if>
@@ -389,37 +384,36 @@
                         <div class="course__tag-2 mb-15">
                            <!--여기에 해당하는 키워드(값들 꺼내서)들 넣기-->
                           <i class="fal fa-tag"></i>
-                          <a>  ${education.edKeyword}</a>
+                          <a>  ${lecture.vcKeyword}</a>
                        </div>
                         <!--해당 교육과정 이미지-->
                         <div class="course__img w-img mb-30">
-                           <img src="../assets/img/course/${education.ed_pic}" alt="" width='770' height='450'>
+                           <img src="../assets/img/course/${lecture.vc_pic}" alt="" width='770' height='450'>
                         </div>
                          <!--교육과정 관련 tab부분 -->
                         <div class="course__tab-2 mb-45">
                            <ul class="nav nav-tabs" id="courseTab" role="tablist">
-
-                              
                               <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true"> <i class="icon_ribbon_alt"></i> <span>상세설명</span> </button>
                               </li>
                               <li class="nav-item" role="presentation">
-                                <button class="nav-link " id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum" type="button" role="tab" aria-controls="curriculum" aria-selected="true"> <i class="icon_book_alt"></i> <span>교육과정</span> </button>
+                                <button class="nav-link " id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum" type="button" role="tab" aria-controls="curriculum" aria-selected="false"> <i class="icon_book_alt"></i> <span>교육과정</span> </button>
                               </li>
                               <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="true"> <i class="icon_star_alt"></i> <span>후기</span> </button>
+                                <button class="nav-link" id="review-tab" data-bs-toggle="tab" data-bs-target="#review" type="button" role="tab" aria-controls="review" aria-selected="false"> <i class="icon_star_alt"></i> <span>후기</span> </button>
                               </li>
-                              
-                              
+                              <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="member-tab" data-bs-toggle="tab" data-bs-target="#member" type="button" role="tab" aria-controls="member" aria-selected="false"> <i class="fal fa-user"></i> <span>담당강사님들</span> </button>
+                              </li>
                             </ul>
                         </div>
                         <div class="course__tab-content mb-95">
                            <div class="tab-content" id="courseTabContent">
                               <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
                                  <div class="course__description">
-                                    <h3>${education.edTitle}</h3>
+                                    <h3>${lecture.vcTitle}</h3>
                                      <!--상세내용(크롤링해서 넣기)-->
-                                    <p>${education.ed_intro}</p>
+                                    <p>${lecture.vc_intro}</p>
 
                                     
                                     <div class="course__description-list mb-45">
@@ -517,7 +511,7 @@
                                           <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-4">
                                              <div class="course__review-rating-info grey-bg text-center">
                                                 <c:forEach var="avg" items="${avg}">  
-                                                   <c:if test="${avg[0] == education.edId}" >  
+                                                   <c:if test="${avg[0] == lecture.vcId}" >  
                                                 <h5>${avg[1]}</h5>
                                                 <c:if test="${avg[1] == 1}">
                                                       <img src="../assets/img/star/1s.png">
@@ -614,11 +608,11 @@
                               <c:choose>
                               <c:when test="${pageNumber+1 == i}">
                                  <li>
-                                    <a href="course-details?page=${i}&edId=${param.edId}"><span id="a">${i}</span></a>
+                                    <a href="lecture-details?page=${i}&vcId=${param.vcId}"><span id="a">${i}</span></a>
                                  </li>
                               </c:when>
                               <c:otherwise>
-                                 <li><a href="course-details?page=${i}&edId=${param.edId}"><span id="b">${i}</span></a></li>
+                                 <li><a href="lecture-details?page=${i}&edId=${param.vcId}"><span id="b">${i}</span></a></li>
                               </c:otherwise>
                               </c:choose>
                               </c:forEach>
@@ -631,7 +625,7 @@
                               <c:when test="${elist.last}"></c:when>
                               <c:otherwise>
                                  <li class="next">
-                                    <a href="course-sidebar?page=${totalPages}" class="link-btn">
+                                    <a href="lecture-sidebar?page=${totalPages}" class="link-btn">
                                     Next
                                     <i class="arrow_right"></i>
                                     <i class="arrow_right"></i>
@@ -666,8 +660,8 @@
                                                    <div class="course__form-input">
                                                       <!--아이디값 저장 지금은 그냥 임의의 값 넣어줌-->
                                                       <!--참고로 re_id 는 시퀀스라 자동이고 날짜도 자동으로 들어가게 해놓음-->
-                                                      <input type="text" name="memIdString" value="bcj0825"  id = memIdString> <!-- "${sessionScope.memIdInt}"-->
-                                                      <input type="hidden" name="memIdInt" value="17"  id = memIdInt> <!-- "${sessionScope.memIdInt}"-->
+                                                      <input type="text" name="memId" value="${sessionScope.memId}"  id = name> <!-- "${sessionScope.memId}"-->
+                                                    
                                                       
                                                    </div>
                                                 </div>
@@ -685,8 +679,7 @@
                                                          <img id =image5 onmouseover=show(5) onclick=mark(5) onmouseout=noshow(5) src="../assets/img/star/0star.png">
                                                          <span id=startext></span>
                                                          <input type="hidden" name="star"  id="star"> <!--히든넘기기-->
-                                                         <input type="hidden" name="edId" value="${param.edId}"> <!--히든넘기기--> <!--임의의값임 수정 완료-->
-                                                         
+                                                         <input type="hidden" name="vcId" value="${param.vcId}"> <!--히든넘기기--> <!--임의의값임 수정 완료-->
                                                       </div>
 
                                                      <!--작성글 들어가는 부분!-->
