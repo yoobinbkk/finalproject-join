@@ -1,14 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!doctype html>
 <html class="no-js" lang="zxx">
    <head>
+      <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Educal – Online Learning and Education HTML5 Template </title>
+      <title>뉴스상세페이지</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
@@ -25,7 +24,7 @@
       <link rel="stylesheet" href="/assets/css/fontAwesome5Pro.css">
       <link rel="stylesheet" href="/assets/css/elegantFont.css">
       <link rel="stylesheet" href="/assets/css/default.css">
-      <link rel="stylesheet" href="/assets/css/style.css">      
+      <link rel="stylesheet" href="/assets/css/style.css">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -382,84 +381,80 @@
       <div class="body-overlay"></div>
       <!-- sidebar area end -->
 
-      <!-- 메인페이지 시작 -->
       <main>
 
-         <!-- sign up area start -->
-         <section class="signup__area po-rel-z1 pt-100 pb-145">
-            <div class="sign__shape">
-               <img class="man-1" src="/assets/img/icon/sign/man-1.png" alt="">
-               <img class="man-2" src="/assets/img/icon/sign/man-2.png" alt="">
-               <img class="circle" src="/assets/img/icon/sign/circle.png" alt="">
-               <img class="zigzag" src="/assets/img/icon/sign/zigzag.png" alt="">
-               <img class="dot" src="/assets/img/icon/sign/dot.png" alt="">
-               <img class="bg" src="/assets/img/icon/sign/sign-up.png" alt="">
+         <!-- page title area start -->
+         <section class="page__title-area pt-120">
+            <div class="page__title-shape">
+               <img class="page-title-shape-5 d-none d-sm-block" src="/assets/img/page-title/page-title-shape-1.png" alt="">
+               <img class="page-title-shape-6" src="/assets/img/page-title/page-title-shape-2.png" alt="">
+               <img class="page-title-shape-7" src="/assets/img/page-title/page-title-shape-4.png" alt="">
+               <img class="page-title-shape-8" src="/assets/img/page-title/page-title-shape-5.png" alt="">
             </div>
             <div class="container">
                <div class="row">
-                  <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
-                     <div class="section__title-wrapper text-center mb-55">
-                        <h2 class="section__title">Sign in to <br>  recharge direct.</h2>
-                        <p>it you don't have an account you can <a href="#">Register here!</a></p>
+                  <div class="col-xxl-9 col-xl-8">
+                     <div class="page__title-content mb-25 pr-40">
+                        <div class="page__title-breadcrumb">                            
+                            <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb">
+                                 <!-- home을 눌렀을땐 메인페이지, 뉴스를 누를떈 뉴스리스트 페이지로 이동-->
+                                <li class="breadcrumb-item"><a href="index-2">Home</a></li>
+                                <li class="breadcrumb-item"><a href="newsList">뉴스</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">뉴스상세페이지</li>
+                              </ol>
+                            </nav>
+                        </div>
+                        <!-- 누른 해당뉴스페이지의 기사제목출력-->
+                        <h5 class="page__title-3">${news.newsTitle}</h5>
                      </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                     <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                           <div class="sign__in text-center">
-                              <!-- 카카오 로그인 -->
-                              <a href="https://kauth.kakao.com/oauth/authorize?client_id=ed05f17a60ce1cf99ab3e4539248dbbf&redirect_uri=http://localhost:8080/kakaoLogin&response_type=code" class="sign__social text-start mb-15"><i class="fab fa-facebook-f"></i>Sign in with Facebook</a>
-                              <p> <span>........</span> Or, <a href="sign-in">sign in</a> with your email<span> ........</span> </p>
+                     <div class="course__meta-2 d-sm-flex mb-30">
+                        <div class="course__teacher-3 d-flex align-items-center mr-70 mb-30">
+                           <div class="course__teacher-info-3">
+                              <h5>기자:</h5>
+                              <!-- 해당 기자이름출력-->
+                              <h4><p>${news.newsMan}</p></h4>
                            </div>
                         </div>
-                        <div class="sign__form">
-                           <!-- bk 로그인 버튼 액션 -->
-                           <form action="loginMember" type="post">
-                              <div class="sign__input-wrapper mb-25">
-                                 <h5>ID</h5>
-                                 <div class="sign__input">
-                                    <input type="text" placeholder="ID" id="m_id" name="memIdString">
-                                    <i class="fal fa-user"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__input-wrapper mb-10">
-                                 <h5>Password</h5>
-                                 <div class="sign__input">
-                                    <input type="password" placeholder="Password" id="m_pass" name="memPass">
-                                    <i class="fal fa-lock"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__action d-sm-flex justify-content-between mb-30">
-                                 <div class="sign__agree d-flex align-items-center">
-                                    <input class="m-check-input" type="checkbox" id="m-agree">
-                                    <label class="m-check-label" for="m-agree">Keep me signed in
-                                       </label>
-                                 </div>
-                                 <div class="sign__forgot">
-                                    <a href="findIdPw">계정 / 비밀번호 찾기</a>
-                                 </div>
-                              </div>
-                              <button class="e-btn  w-100" type="submit"> <span></span> Sign In</button>
-                              <div class="sign__new text-center mt-20">
-                                 <p>New to Markit? <a href="sign-up">Sign Up</a></p>
-                              </div>
-                           </form>
+                        <div class="course__update mr-80 mb-30">
+                           <h5>작성일:</h5>
+                           <!-- 해당 뉴스 작성일 년,월,일 식으로 출력-->
+                           <h4><span><fmt:formatDate value="${news.newsDate}" pattern="yyyy.MM.dd" /></span></h4>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-         <!-- sign up area end -->
-         
+         <!-- page title area end -->
+
+         <!-- event details area start -->
+         <section class="event__area pb-110">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xxl-8 col-xl-8 col-lg-8">
+                     <div class="events__wrapper">
+                        <div class="events__thumb mb-35 w-img">
+                           <!-- 해당 뉴스의 이미지를 띄우기-->
+                           <img src="${news.newsImg}" alt="">
+                        </div>
+                        <div class="blog__text mb-40">
+                           <h3>기사내용</h3>
+                           <!-- 해당 뉴스의 전문 출력-->
+                           <p><i>${news.newsContent}<i></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- event details area end -->
       </main>
 
          <!-- footer area start -->
          <footer>
             <div class="footer__area footer-bg">
-               <div class="footer__top pt-90 pb-40">
+               <div class="footer__top pt-190 pb-40">
                   <div class="container">
                      <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
@@ -577,7 +572,6 @@
       <script src="/assets/js/wow.min.js"></script>
       <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
       <script src="/assets/js/main.js"></script>
-      
    </body>
 </html>
 

@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-
 
 <!doctype html>
 <html class="no-js" lang="zxx">
@@ -25,7 +23,8 @@
       <link rel="stylesheet" href="/assets/css/fontAwesome5Pro.css">
       <link rel="stylesheet" href="/assets/css/elegantFont.css">
       <link rel="stylesheet" href="/assets/css/default.css">
-      <link rel="stylesheet" href="/assets/css/style.css">      
+      <link rel="stylesheet" href="/assets/css/style.css">
+      <link rel="stylesheet" href="/assets/css/honest-review.css">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -382,84 +381,194 @@
       <div class="body-overlay"></div>
       <!-- sidebar area end -->
 
-      <!-- 메인페이지 시작 -->
       <main>
 
-         <!-- sign up area start -->
-         <section class="signup__area po-rel-z1 pt-100 pb-145">
-            <div class="sign__shape">
-               <img class="man-1" src="/assets/img/icon/sign/man-1.png" alt="">
-               <img class="man-2" src="/assets/img/icon/sign/man-2.png" alt="">
-               <img class="circle" src="/assets/img/icon/sign/circle.png" alt="">
-               <img class="zigzag" src="/assets/img/icon/sign/zigzag.png" alt="">
-               <img class="dot" src="/assets/img/icon/sign/dot.png" alt="">
-               <img class="bg" src="/assets/img/icon/sign/sign-up.png" alt="">
-            </div>
-            <div class="container">
-               <div class="row">
-                  <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
-                     <div class="section__title-wrapper text-center mb-55">
-                        <h2 class="section__title">Sign in to <br>  recharge direct.</h2>
-                        <p>it you don't have an account you can <a href="#">Register here!</a></p>
+         
+         <!-- 솔직 질문/답변 시작 -->
+         <div class="container header-padding-top">
+            <div class="ant-space ant-space-vertical ant-gap">
+
+               <!-- 질문 시작 -->
+               <div class="honestChat-line">
+                  <div class="honestChat-question">
+
+                     <!-- 질문자 사진 -->
+                     <div class="honestChat-block">
+
+                        <!-- 프로필 사진 -->
+                        <div class="honestChat-profile-pic">
+                           <img class="honestChat-profile-size" src="/assets/img/profile-pic/dogShiny.png">
+                        </div>
+
+                        <!-- 아이디 출력 -->
+                        <div class="honestChat-profile-ID">
+                           <span class="honestChat-ID">참참참1234</span>
+                        </div>
+
                      </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                     <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                           <div class="sign__in text-center">
-                              <!-- 카카오 로그인 -->
-                              <a href="https://kauth.kakao.com/oauth/authorize?client_id=ed05f17a60ce1cf99ab3e4539248dbbf&redirect_uri=http://localhost:8080/kakaoLogin&response_type=code" class="sign__social text-start mb-15"><i class="fab fa-facebook-f"></i>Sign in with Facebook</a>
-                              <p> <span>........</span> Or, <a href="sign-in">sign in</a> with your email<span> ........</span> </p>
+
+                     <!-- 질문 채팅 내용 -->
+                     <div class="honestChat-block">
+
+                        <!-- 채팅 내용 -->
+                        <div class="honestChat-container">
+                           <div class="honestChat-comment-right">
+                              <div class="ant-space ant-space-vertical ant-gap">
+                                 <div class="honestChat-line">
+                                    <h5 class="ant-typography">
+                                       <b>부트텐트는 뭔가요? 부트캠프의 일종인가요?</b>
+                                    </h5>
+                                 </div>
+                                 <div class="honestChat-line">
+                                    <p>부트텐트를 처음 접합니다. <br>
+                                       이 사이트는 무엇을 위한 사이트인지 궁금합니다.<br>
+                                    </p>
+                                 </div>
+                              </div>
                            </div>
                         </div>
-                        <div class="sign__form">
-                           <!-- bk 로그인 버튼 액션 -->
-                           <form action="loginMember" type="post">
-                              <div class="sign__input-wrapper mb-25">
-                                 <h5>ID</h5>
-                                 <div class="sign__input">
-                                    <input type="text" placeholder="ID" id="m_id" name="memIdString">
-                                    <i class="fal fa-user"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__input-wrapper mb-10">
-                                 <h5>Password</h5>
-                                 <div class="sign__input">
-                                    <input type="password" placeholder="Password" id="m_pass" name="memPass">
-                                    <i class="fal fa-lock"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__action d-sm-flex justify-content-between mb-30">
-                                 <div class="sign__agree d-flex align-items-center">
-                                    <input class="m-check-input" type="checkbox" id="m-agree">
-                                    <label class="m-check-label" for="m-agree">Keep me signed in
-                                       </label>
-                                 </div>
-                                 <div class="sign__forgot">
-                                    <a href="findIdPw">계정 / 비밀번호 찾기</a>
-                                 </div>
-                              </div>
-                              <button class="e-btn  w-100" type="submit"> <span></span> Sign In</button>
-                              <div class="sign__new text-center mt-20">
-                                 <p>New to Markit? <a href="sign-up">Sign Up</a></p>
-                              </div>
-                           </form>
+
+                        <!-- 작성날짜 -->
+                        <div class="honestChat-container-date">
+                           <span class="honestChat-date">2023-01-05 16:34:22</span>
                         </div>
+
+                     </div>
+
+                  </div>
+               </div>
+
+               <!-- 솔직 답변 시작 -->
+               <div class="honestChat-lines">
+                  <div class="honestChat-answers">
+                     <div class="ant-space ant-space-vertical ant-gap">
+                        
+                        <!-- 답변 -->
+                        <div class="honestChat-line">
+                           <div class="honestChat-answer">
+
+                              <!-- 답변자 사진 -->
+                              <div class="honestChat-block">
+
+                                 <!-- 프로필 사진 -->
+                                 <div class="honestChat-profile-pic">
+                                    <img class="honestChat-profile-size" src="/assets/img/profile-pic/001.png">
+                                 </div>
+
+                                 <!-- 아이디 출력 -->
+                                 <div class="honestChat-profile-ID">
+                                    <span class="honestChat-ID">ㅛ어ㅏㅌㅊㅍㅌㅇㄴ</span>
+                                 </div>
+
+                              </div>
+                              
+                              <!-- 답변자 채팅 내용 -->
+                              <div class="honestChat-block">
+
+                                 <!-- 채팅 내용 -->
+                                 <div class="honestChat-container">
+                                    <div class="honestChat-comment-left">
+                                       <div class="ant-space ant-space-vertical ant-gap">
+                                          <div class="honestChat-line">
+                                             <strong>현) it교육 기획자, 전) 부캠 운영 경험</strong>
+                                          </div>
+                                          <div class="honestChat-line">
+                                             <p>부트텐트는 코딩부트캠프나 개발자 취업을 고민하는 분들이 정보를 편하게 볼 수 있도록 만든
+                                                서비스입니다. <br>
+                                                유튜브를 운영하며 많은 분들이 개발자로의 전직이나 취업을 고민하고 있다는 것을 알게 되었고, <br>
+                                                조금이라도 도움을 드리기 위해 부트텐트를 만들었습니다.<br></p>
+                                             <p>저는 코딩부트캠프를 통해 취업을 하지는 않았지만, 대기업 개발자 경험이 있으며 <br>
+                                                퇴사 후 여러 강의, 국비교육, 부트캠프 등을 들어봤습니다. <br>
+                                                또한 많은 지인들이 네카라쿠배당토 등의 현업 개발자이고, 강의를 하거나 책 저자인 분들도 계십니다. <br>
+                                                궁금하신 부분은 우측하단 채널톡을 이용하시면 아는 한도에서 말씀드리겠습니다.</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- 작성날짜 -->
+                                 <div class="honestChat-container-date-right">
+                                    <span class="honestChat-date">2023-01-06 14:00:00</span>
+                                 </div>
+
+                              </div>
+                              
+                           </div>
+                        </div>
+
+                        <!-- 답변 -->
+                        <div class="honestChat-line">
+                           <div class="honestChat-answer">
+                              <!-- 프로필 사진 -->
+                              <div class="honestChat-profile-pic">
+                                 <img class="honestChat-profile-size" src="/assets/img/profile-pic/002.png">
+                              </div>
+                              <div class="honestChat-container">
+                                 <div class="honestChat-comment-left">
+                                    <div class="ant-space ant-space-vertical ant-gap">
+                                       <div class="honestChat-line">
+                                          <strong>현) it교육 기획자, 전) 부캠 운영 경험</strong>
+                                       </div>
+                                       <div class="honestChat-line">
+                                          <p>개발자가 되고 싶은 분들은 점점 많아지고 있습니다. 하지만, ‘어떻게 개발자가 될 수 있을까?’를 궁금해 하시는 분들에게
+                                             제공돼야 하는 좋은 정보들은 아직도 접근성이 많이 떨어집니다. 검색을 해봐도 복잡하고 어려운 용어들로 설명된 이해하기 힘든
+                                             글들이 대부분이고, 업체에서 뿌린 광고성 콘텐츠들 때문에 어떤 정보를 믿어야 할지도 잘 모르겠습니다.</p>
+                                          <p>더 이상 좋은 정보의 부족으로 피해보시는 분들이 없도록, 개발 교육과 개발자 커리어에 대한 진정성 있는 정보를 제공해주는
+                                             서비스가 필요하다고 생각했습니다. 그래서, 부트텐트와 함께 하며 개발자 커리어를 이제 막 준비하는 분들에게 필요한 정보를
+                                             제공해드리는 중입니다.</p>
+                                          <p>저는 한 업체에서 데이터 사이언스와 프론트엔드 취업교육 과정을 기획하고 운영하는 업무를 했었습니다. 현재는 소속을 옮겨서
+                                             프로그래밍 학습을 위한 온라인 교육 콘텐츠를 제작하고, 학습을 진행하는 온라인 서비스를 개선 및 운영하는 업무를 하는
+                                             중입니다.</p>
+                                          <p>개발 교육 업계에서 근무하고, 또 교육과정을 직접 운영해본 경험을 바탕으로 부트캠프와 개발자 취업 준비 과정에 숨겨진 썰들을
+                                             다양하게 풀어보겠습니다! 궁금한 점 있으신 분들은 우측 하단에 카카오채널로 문의 남겨 주세요 제가 아는 한에서 성심껏 답변
+                                             드려보겠습니다 :)</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
                      </div>
                   </div>
                </div>
+               <!-- 솔직 답변 끝 -->
+
             </div>
-         </section>
-         <!-- sign up area end -->
-         
+         </div>
+         <!-- 솔직 질문/답변 끝 -->
+
+         <!-- 새로운 답변 작성 -->
+         <div class="container padding-top ant-gap">
+            <form action="insertHR" method="post">
+               <div class="row">
+                  <div class="col-xs-8 col-sm-8 col-md-7 col-lg-7 col-xl-6 col-xxl-6">
+                     <div class="course__form-input">
+                        <input type="text" placeholder="Review Title">
+                     </div>
+                  </div>
+                  <div class="col-xxl-12">
+                     <div class="course__form-input">
+                        <textarea placeholder="여기에 답변을 입력해주세요."></textarea>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-xxl-12">
+                     <div class="course__form-btn mt-10 mb-55 honestChat-answer-btn">
+                        <button type="submit" class="e-btn honestChat-answer-btn">답변하기</button>
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </div>
+
       </main>
 
          <!-- footer area start -->
          <footer>
             <div class="footer__area footer-bg">
-               <div class="footer__top pt-90 pb-40">
+               <div class="footer__top pt-190 pb-40">
                   <div class="container">
                      <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
@@ -577,7 +686,6 @@
       <script src="/assets/js/wow.min.js"></script>
       <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
       <script src="/assets/js/main.js"></script>
-      
    </body>
 </html>
 

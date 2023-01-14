@@ -1,14 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
    <head>
+      <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Educal – Online Learning and Education HTML5 Template </title>
+      <title>공지게시판</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
@@ -25,7 +23,7 @@
       <link rel="stylesheet" href="/assets/css/fontAwesome5Pro.css">
       <link rel="stylesheet" href="/assets/css/elegantFont.css">
       <link rel="stylesheet" href="/assets/css/default.css">
-      <link rel="stylesheet" href="/assets/css/style.css">      
+      <link rel="stylesheet" href="/assets/css/style.css">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -382,78 +380,120 @@
       <div class="body-overlay"></div>
       <!-- sidebar area end -->
 
-      <!-- 메인페이지 시작 -->
       <main>
-
-         <!-- sign up area start -->
-         <section class="signup__area po-rel-z1 pt-100 pb-145">
-            <div class="sign__shape">
-               <img class="man-1" src="/assets/img/icon/sign/man-1.png" alt="">
-               <img class="man-2" src="/assets/img/icon/sign/man-2.png" alt="">
-               <img class="circle" src="/assets/img/icon/sign/circle.png" alt="">
-               <img class="zigzag" src="/assets/img/icon/sign/zigzag.png" alt="">
-               <img class="dot" src="/assets/img/icon/sign/dot.png" alt="">
-               <img class="bg" src="/assets/img/icon/sign/sign-up.png" alt="">
-            </div>
+         <!-- 공지게시판 수정 시작-->
+         <!-- page title area start -->
+         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="/assets/img/page-title/page-title-2.jpg">
             <div class="container">
                <div class="row">
-                  <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
-                     <div class="section__title-wrapper text-center mb-55">
-                        <h2 class="section__title">Sign in to <br>  recharge direct.</h2>
-                        <p>it you don't have an account you can <a href="#">Register here!</a></p>
-                     </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                     <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                           <div class="sign__in text-center">
-                              <!-- 카카오 로그인 -->
-                              <a href="https://kauth.kakao.com/oauth/authorize?client_id=ed05f17a60ce1cf99ab3e4539248dbbf&redirect_uri=http://localhost:8080/kakaoLogin&response_type=code" class="sign__social text-start mb-15"><i class="fab fa-facebook-f"></i>Sign in with Facebook</a>
-                              <p> <span>........</span> Or, <a href="sign-in">sign in</a> with your email<span> ........</span> </p>
-                           </div>
-                        </div>
-                        <div class="sign__form">
-                           <!-- bk 로그인 버튼 액션 -->
-                           <form action="loginMember" type="post">
-                              <div class="sign__input-wrapper mb-25">
-                                 <h5>ID</h5>
-                                 <div class="sign__input">
-                                    <input type="text" placeholder="ID" id="m_id" name="memIdString">
-                                    <i class="fal fa-user"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__input-wrapper mb-10">
-                                 <h5>Password</h5>
-                                 <div class="sign__input">
-                                    <input type="password" placeholder="Password" id="m_pass" name="memPass">
-                                    <i class="fal fa-lock"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__action d-sm-flex justify-content-between mb-30">
-                                 <div class="sign__agree d-flex align-items-center">
-                                    <input class="m-check-input" type="checkbox" id="m-agree">
-                                    <label class="m-check-label" for="m-agree">Keep me signed in
-                                       </label>
-                                 </div>
-                                 <div class="sign__forgot">
-                                    <a href="findIdPw">계정 / 비밀번호 찾기</a>
-                                 </div>
-                              </div>
-                              <button class="e-btn  w-100" type="submit"> <span></span> Sign In</button>
-                              <div class="sign__new text-center mt-20">
-                                 <p>New to Markit? <a href="sign-up">Sign Up</a></p>
-                              </div>
-                           </form>
-                        </div>
+                  <div class="col-xxl-12">
+                     <div class="page__title-wrapper mt-110">
+                        <h3 class="page__title">공지</h3>                         
+                        <nav aria-label="breadcrumb">
+                           <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="index-2">Home</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">공지</li>
+                           </ol>
+                        </nav>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-         <!-- sign up area end -->
-         
+         <!-- page title area end -->
+
+         <!-- Cart Area Strat-->
+         <section class="cart-area pt-100 pb-100">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="table-content table-responsive">
+                        <table class="table">
+                           <thead>
+                              <tr>
+                                 <th class="product-thumbnail">NO</th>
+                                 <th class="cart-product-name">공지 제목</th>
+                                 <th class="product-subtotal">공지 날짜</th>
+                                 <th class="product-remove">작성자</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <!-- 공지게시판 리스트 출력하는 반복문-->
+                              <c:forEach items="${announcementList}" var="anno">
+                                 <tr>
+                                    <td class="product-thumbnail">${anno.anId}</td>
+                                    <td class="product-name"><a href="announcement-detail?anId=${anno.anId}">${anno.anTitle}</a></td>
+                                    <td class="product-subtotal"><fmt:formatDate value="${anno.anDate}" pattern="yyyy년 MM월 dd일"/></td>
+                                    <td class="product-remove">${anno.adId}</td>
+                                 </tr>
+                              </c:forEach>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <!-- 페이징 영역 시작 -->
+               <div class="row">
+                  <div class="col-xxl-12">
+                     <div class="basic-pagination wow fadeInUp mt-30" data-wow-delay=".2s">
+                        <ul class="d-flex align-items-center"> 
+                           <!-- first : 해당 페이지가 첫번째 페이지인지 여부(true/false로 구분)-->
+                           <!-- 해당페이지가 첫번째인 경우에는 아무것도 설정안함-->
+                           <!-- 해당 페이지가 첫번째 페이지가 아닌경우-->
+                           <!-- 맨처음페이지로 이동 -->
+                           <c:choose>
+                              <c:when test="${elist.first}"></c:when>
+                              <c:otherwise>
+                                 <li class="prev">
+                                    <a href="announcement?page=1" class="link-btn link-prev">
+                                       Prev
+                                    <i class="arrow_left"></i>
+                                    <i class="arrow_left"></i>
+                                    </a>
+                                 </li>
+                              </c:otherwise>
+                           </c:choose>
+                        <!-- 페이지 그룹 -->
+                        <!-- 시작블럭을 반복시작 인덱스로 종료블럭을 반복종료 인덱스로 설정  -->
+                           <c:forEach begin="${startBlockPage}" end="${endBlockPage}" var="i">
+                           <!-- 현재페이지의 +1이 i랑 같은 경우 다음페이지로 이동하게 설정 -->
+                           <!-- 현재페이지의 +1이 i랑 다른 경우 다음 페이지로 이동하게 설정-->
+                              <c:choose>
+                                 <c:when test="${pageNumber+1 == i}">
+                                    <li>
+                                       <a href="announcement?page=${i}"><span>${i}</span></a>
+                                    </li>
+                                 </c:when>
+                                 <c:otherwise>
+                                    <li><a href="announcement?page=${i}"><span>${i}</span></a></li>
+                                 </c:otherwise>
+                                 </c:choose>
+                              </c:forEach>
+                              <!-- 맨마지막페이지 -->
+                              <!-- last : 해당 페이지가 마지막 페이지인지 여부(true/false로 구분)-->
+                              <!-- 해당페이지가 마지막인 경우에는 아무것도 설정안함-->
+                              <!-- 해당 페이지가 마지막 페이지가 아닌경우-->
+                              <!-- 마지막페이지로 이동 -->
+                              <c:choose>     
+                                 <c:when test="${elist.last}"></c:when>
+                                 <c:otherwise>
+                                    <li class="next">
+                                       <a href="announcement?page=${totalPages}" class="link-btn">
+                                       Next
+                                       <i class="arrow_right"></i>
+                                       <i class="arrow_right"></i>
+                                       </a>
+                                    </li>
+                                 </c:otherwise>
+                              </c:choose>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <!--row의 끝-->
+            </div>
+         </section>
+         <!-- Cart Area End-->
       </main>
 
          <!-- footer area start -->
@@ -577,7 +617,6 @@
       <script src="/assets/js/wow.min.js"></script>
       <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
       <script src="/assets/js/main.js"></script>
-      
    </body>
 </html>
 

@@ -1,8 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
    <head>
@@ -25,12 +23,46 @@
       <link rel="stylesheet" href="/assets/css/fontAwesome5Pro.css">
       <link rel="stylesheet" href="/assets/css/elegantFont.css">
       <link rel="stylesheet" href="/assets/css/default.css">
-      <link rel="stylesheet" href="/assets/css/style.css">      
+      <link rel="stylesheet" href="/assets/css/style.css">
+      <link rel="stylesheet" href="/assets/css/wishlist.css">
+      
+
+      <style> 
+         #accordionSidebar{
+            background-color: aliceblue;
+            color: #696969;
+         }
+         .nav-item span{
+            color: #2F4F4F;
+            font-weight: bolder;
+            margin-left: 10px;
+            margin-bottom: 15px;
+          
+         }
+         .nav-item i{
+            color: #2F4F4F;
+            font-weight: bolder;
+            margin-left: 20px;
+         }
+         .collapse-item {
+             margin-left:30px;
+             margin-top:10px;
+             margin-bottom:20px;
+     }
+     .accounthead img{
+      width:20px;
+      height:20px;
+      margin-right: 10px;
+      margin-bottom : 5px;
+     }
+     </style>
+
    </head>
    <body>
       <!--[if lte IE 9]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
       <![endif]-->
+   
       
       <!-- Add your site or application content here -->  
 
@@ -382,78 +414,186 @@
       <div class="body-overlay"></div>
       <!-- sidebar area end -->
 
-      <!-- 메인페이지 시작 -->
       <main>
 
-         <!-- sign up area start -->
-         <section class="signup__area po-rel-z1 pt-100 pb-145">
-            <div class="sign__shape">
-               <img class="man-1" src="/assets/img/icon/sign/man-1.png" alt="">
-               <img class="man-2" src="/assets/img/icon/sign/man-2.png" alt="">
-               <img class="circle" src="/assets/img/icon/sign/circle.png" alt="">
-               <img class="zigzag" src="/assets/img/icon/sign/zigzag.png" alt="">
-               <img class="dot" src="/assets/img/icon/sign/dot.png" alt="">
-               <img class="bg" src="/assets/img/icon/sign/sign-up.png" alt="">
-            </div>
+         <!-- page title area start -->
+         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="/assets/img/page-title/page-title-2.jpg">
             <div class="container">
                <div class="row">
-                  <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
-                     <div class="section__title-wrapper text-center mb-55">
-                        <h2 class="section__title">Sign in to <br>  recharge direct.</h2>
-                        <p>it you don't have an account you can <a href="#">Register here!</a></p>
-                     </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                     <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                           <div class="sign__in text-center">
-                              <!-- 카카오 로그인 -->
-                              <a href="https://kauth.kakao.com/oauth/authorize?client_id=ed05f17a60ce1cf99ab3e4539248dbbf&redirect_uri=http://localhost:8080/kakaoLogin&response_type=code" class="sign__social text-start mb-15"><i class="fab fa-facebook-f"></i>Sign in with Facebook</a>
-                              <p> <span>........</span> Or, <a href="sign-in">sign in</a> with your email<span> ........</span> </p>
-                           </div>
-                        </div>
-                        <div class="sign__form">
-                           <!-- bk 로그인 버튼 액션 -->
-                           <form action="loginMember" type="post">
-                              <div class="sign__input-wrapper mb-25">
-                                 <h5>ID</h5>
-                                 <div class="sign__input">
-                                    <input type="text" placeholder="ID" id="m_id" name="memIdString">
-                                    <i class="fal fa-user"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__input-wrapper mb-10">
-                                 <h5>Password</h5>
-                                 <div class="sign__input">
-                                    <input type="password" placeholder="Password" id="m_pass" name="memPass">
-                                    <i class="fal fa-lock"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__action d-sm-flex justify-content-between mb-30">
-                                 <div class="sign__agree d-flex align-items-center">
-                                    <input class="m-check-input" type="checkbox" id="m-agree">
-                                    <label class="m-check-label" for="m-agree">Keep me signed in
-                                       </label>
-                                 </div>
-                                 <div class="sign__forgot">
-                                    <a href="findIdPw">계정 / 비밀번호 찾기</a>
-                                 </div>
-                              </div>
-                              <button class="e-btn  w-100" type="submit"> <span></span> Sign In</button>
-                              <div class="sign__new text-center mt-20">
-                                 <p>New to Markit? <a href="sign-up">Sign Up</a></p>
-                              </div>
-                           </form>
-                        </div>
+ 
+                  <div class="col-xxl-12">
+                     <div class="page__title-wrapper mt-110">
+                        <h3 class="page__title">My Wishlist</h3>                         
+                        <nav aria-label="breadcrumb">
+                           <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="index">Home</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                           </ol>
+                        </nav>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-         <!-- sign up area end -->
-         
+         <!-- page title area end -->
+
+         <!-- 위시리스트 Strat-->
+         <section class="cart-area pt-100 pb-100">
+            <div class="container">
+               <div class="row">
+
+                  <div class="col-sm-3">
+                     <div class="left-sidebar">
+                        <ul
+                           class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+                           id="accordionSidebar"
+                        >
+                           <li class="nav-item">
+                           <a
+                              class="nav-link collapsed"
+                              href="admin/academyList"
+                              data-toggle="collapse"
+                              data-target="#collapseOne"
+                              aria-expanded="true"
+                              aria-controls="collapseOne"
+                           >
+                              <i class="fas fa-fw fa-address-card"></i> <span>회원 정보 관리</span>
+                           </a>
+                           <div
+                              id="collapseOne"
+                              class="collapse"
+                              aria-labelledby="headingUtilities"
+                              data-parent="#accordionSidebar"
+                           >
+                              <div class="bg-white py-2 collapse-inner rounded">
+                                 <a class="collapse-item" href="academyList">회원정보 수정</a><br />
+                                 <a class="collapse-item" href="admin/academyRegister">학원 탈퇴</a>
+                              </div>
+                           </div>
+                           </li>
+
+                           <li class="nav-item">
+                           <a
+                              class="nav-link collapsed"
+                              href="admin/tutorList"
+                              data-toggle="collapse"
+                              data-target="#collapseTwo"
+                              aria-expanded="true"
+                              aria-controls="collapseTwo"
+                           >
+                              <i class="fas fa-fw fa-pencil"></i> <span>작성글 관리</span>
+                           </a>
+                           <div
+                              id="collapseTwo"
+                              class="collapse"
+                              aria-labelledby="headingUtilities"
+                              data-parent="#accordionSidebar"
+                           >
+                              <div class="bg-white py-2 collapse-inner rounded">
+                                 <a class="collapse-item" href="academyList">리뷰관리</a><br />
+                                 <a class="collapse-item" href="admin/academyRegister">1:1문의</a><br />
+                                 <a class="collapse-item" href="admin/academyRegister">코딩게시판</a><br />
+                                 <a class="collapse-item" href="admin/academyRegister">솔직답변</a><br />
+                                 <a class="collapse-item" href="admin/academyRegister">학원 탈퇴</a>
+                              </div>
+                           </div>
+                           </li>
+                           <li class="nav-item">
+                           <a
+                              class="nav-link collapsed"
+                              href="admin/tutorList"
+                              data-toggle="collapse"
+                              data-target="#collapseThree"
+                              aria-expanded="true"
+                              aria-controls="collapseThree"
+                           >
+                              <i class="fas fa-heart"></i> <span>WishList</span>
+                           </a>
+                           <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                              <div class="bg-white py-2 collapse-inner rounded">
+                                 <a class="collapse-item" href="#">관심학원리스트</a><br/> 
+                                 <a class="collapse-item" href="#">관심강의리스트</a>
+                              </div>
+                           </div>
+                           </li>
+                           <li class="nav-item">
+                           <a
+                              class="nav-link collapsed"
+                              href="admin/lectureList.do"
+                              data-toggle="collapse"
+                              data-target="#collapseFour"
+                              aria-expanded="true"
+                              aria-controls="collapseFour"
+                           >
+                              <i class="fas fa-fw fa-desktop"></i> <span>나의 학습</span>
+                           </a>
+                           <div
+                              id="collapseFour"
+                              class="collapse"
+                              aria-labelledby="headingUtilities"
+                              data-parent="#accordionSidebar"
+                           >
+                              <div class="bg-white py-2 collapse-inner rounded">
+                                 <a class="collapse-item" href="/mypage/lessonreserve">예약 현황</a><br />
+                                 <a class="collapse-item" href="/mypage/lessonbox">수업함</a>
+                              </div>
+                           </div>
+                           </li>
+
+                           <li class="nav-item">
+                           <a class="nav-link" href="/admin/member.do">
+                              <i class="fas fa-fw fa-table"></i> <span>튜터등록</span>
+                           </a>
+                           </li>
+
+                           <!-- Nav Item - Pages Collapse Menu -->
+                        </ul>
+                     </div>
+                  </div>
+
+                  
+                  <div class="col-sm-9">
+                     <div class="accounthead mb-25">
+                        <h2 class="section__title "><span class="yellow-bg-sm">관심학원리스트 <img src="/assets/img/shape/yellow-bg-4.png" alt="">  </span></h2>
+                     </div>
+                        <form action="#">
+                           <div class="table-content table-responsive">
+                              <table class="table">
+                                    <thead>
+                                       <tr>
+                                          <th class="product-thumbnail"></th>
+                                          <th class="cart-product-name">교육과정명</th>
+                                          <th class="product-price">비용</th>
+                                          <th class="product-quantity">기간</th>
+                                          <th class="product-subtotal">학원 바로가기</th>
+                                          <th class="product-remove">Remove</th>
+                                       </tr>
+                                    </thead>
+                                    <c:forEach items="${wishList}" var="wish">
+                                    <tbody>
+                                       <tr>
+                                          <td class="product-thumbnail"><a href="course-details"><img src="/assets/img/course/${wish[1]}" alt=""></a></td>
+                                          <td class="product-name"><a href="course-details">${wish[0]}</a></td>
+                                          <td class="product-price"><span class="amount">${wish[2]}</span></td>
+                                          <td class="product-price"><span class="amount">${wish[3]}</span></td>
+                                          <td class="product-quantity">
+                                             <span class="amount">${wish[4]} ~ ${wish[5]} </span>  
+                                          </td>
+                                          <td class="product-subtotal"> <button class="e-btn e-btn-border" type="submit">상세보기</button></td>
+                                          <td class="product-remove"><a href="#"><i class="fa fa-times"></i></a></td>
+                                       </tr>
+                                    </tbody>
+                                    </c:forEach>
+                              </table>
+                           </div>
+                        </form>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Cart Area End-->
+
+
       </main>
 
          <!-- footer area start -->
@@ -577,7 +717,18 @@
       <script src="/assets/js/wow.min.js"></script>
       <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
       <script src="/assets/js/main.js"></script>
-      
+      <script src="/assets/js/wishList.js"></script><!--0106 좋아요 버튼 관련 ajax-->
+        <!-- Bootstrap core JavaScript-->
+    <script src="../admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    
+
+ 
+
+  
+
+    
+   
    </body>
 </html>
 

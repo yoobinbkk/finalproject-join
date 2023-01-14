@@ -1,12 +1,12 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
    <head>
-      <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>랭킹페이지</title>
+      <title>Educal – Online Learning and Education HTML5 Template </title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
@@ -24,6 +24,8 @@
       <link rel="stylesheet" href="/assets/css/elegantFont.css">
       <link rel="stylesheet" href="/assets/css/default.css">
       <link rel="stylesheet" href="/assets/css/style.css">
+      <link rel="stylesheet" href="/assets/css/allcss.css">
+
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -46,7 +48,7 @@
          </div>  
       </div>
       <!-- pre loader area end -->
-
+      
       <!-- back to top start -->
       <div class="progress-wrap">
          <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -99,17 +101,17 @@
                                  <nav id="mobile-menu">
                                     <ul>
                                        <li class="has-dropdown">
-                                          <a>About</a>
+                                          <a href="/about">About</a>
                                           <ul class="submenu">
-                                             <li><a href="/about">로고 소개</a></li>
+                                             <li><a href="/about">소개</a></li>
                                              <li><a href="/map">지도</a></li>
                                           </ul>
                                        </li>
                                        <li class="has-dropdown">
-                                          <a>학원</a>
+                                          <a>화상</a>
                                           <ul class="submenu">
-                                             <li><a href="/academy/course-sidebar">학원 목록</a></li>
-                                             <li><a href="/academy/rank">학원 랭크</a></li>
+                                             <li><a href="/tutor">선생님</a></li>
+                                             <li><a href="/lecture">강의</a></li>
                                           </ul>
                                        </li>
                                        <li class="has-dropdown">
@@ -167,21 +169,18 @@
                                  <nav id="mobile-menu">
                                     <ul>
                                        <li class="has-dropdown">
-                                          <a>About</a>
+                                          <a href="/about">About</a>
                                           <ul class="submenu">
-                                             <li><a href="/about">로고 소개</a></li>
+                                             <li><a href="/about">소개</a></li>
                                              <li><a href="/map">지도</a></li>
                                           </ul>
                                        </li>
                                        <li class="has-dropdown">
-                                          <a>학원</a>
+                                          <a>화상</a>
                                           <ul class="submenu">
-                                             <li><a href="/academy/course-sidebar">학원 목록</a></li>
-                                             <li><a href="/academy/rank">학원 랭크</a></li>
+                                             <li><a href="/tutor">선생님</a></li>
+                                             <li><a href="/lecture">강의</a></li>
                                           </ul>
-                                       </li>
-                                       <li>
-                                          <a href="course-sidebar">학원</a>
                                        </li>
                                        <li class="has-dropdown">
                                           <a>게시판</a>
@@ -198,6 +197,9 @@
                                     </ul>
                                  </nav>
                               </div>
+                              
+                              
+
                               <!-- 0103 찬주2
                                  메인화면에서의 검색기능과 동일한 부분 
                               -->
@@ -205,14 +207,12 @@
                               <div class="header__search p-relative ml-50 d-none d-md-block">
 
                                  <form id = "main" action=/academy/course-sidebar method="GET">
-                                    <input type="text" name ="keywords"  placeholder="ex)교육과정 및 학원이름 검색">
+                                    <input type="text" name ="keywords"  placeholder="ex)강의 및 선생님검색">
                                     <button type="submit"><i class="fad fa-search"></i></button>
                                  </form>
                                  <!-- 검색 끝-->
 
-
-
-
+                                 
                                  <div class="header__cart">
                                     <a href="javascript:void(0);" class="cart-toggle-btn">
                                        <div class="header__cart-icon">
@@ -378,94 +378,206 @@
       <!-- sidebar area end -->      
       <div class="body-overlay"></div>
       <!-- sidebar area end -->
-      <br/>
+
       <main>
-         <!-- 1~3위까지 랭킹 -->
-         <section class="blog__area pt-115 pb-130">
+
+         <!-- page title area start -->
+         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="/assets/img/page-title/page-title.jpg">
             <div class="container">
                <div class="row">
-                  <div class="col-xxl-6 offset-xxl-3">
-                     <div class="section__title-wrapper text-center mb-60">
-                        <h2 class="section__title">
-                           <span class="yellow-bg yellow-bg-big">부트캠프 랭킹<img src="/assets/img/shape/yellow-bg.png" alt=""></span>
-                        </h2>
-                        <p>You don't have to struggle alone, you've got our assistance and help.</p>
+                  <div class="col-xxl-12">
+                     <div class="page__title-wrapper mt-110">
+                        <h3 class="page__title">선생님리스트</h3>                         
+                        <nav aria-label="breadcrumb">
+                           <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="index">Home</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">선생님리스트</li>
+                           </ol>
+                        </nav>
                      </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <c:forEach items="${rank}" var="rank">
-                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                     <div class="blog__item white-bg mb-30 transition-3 fix">
-                        <div class="blog__thumb w-img fix">
-                           <a href="blog-details.html">
-                              <!--sql 첫번쨰 인덱스를 출력, 해당 사진 -->
-                              <img src="/assets/img/course/${rank[1]}" alt="" width='100' height='260'>
-                           </a>
-                        </div>
-                        <div class="blog__content">
-                           <!--sql 첫번쨰 인덱스를 출력, 해당 학원이름 -->
-                           <h3 class="blog__title"><a href="blog-details.html">${rank[0]}</a></h3>
-                           <div class="blog__meta d-flex align-items-center justify-content-between">
-                              <div class="blog__author d-flex align-items-center">
-                                 <span><i class="icon_star"></i></span>
-                                 <!--sql 첫번쨰 인덱스를 출력, 해당 학원 후기 평균낸 점수 -->
-                                 <div>${rank[3]}</div>
-                              </div>
-                              <div class="blog__date d-flex align-items-center">
-                                 <a href="event-details.html" class="link-btn">
-                                    View More
-                                    <i class="far fa-arrow-right"></i>
-                                    <i class="far fa-arrow-right"></i>
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  </c:forEach>
-               </div>
-
-               <!-- 4위부터 아래부분 -->
-               <br/>
-               <div class="container">
-                  
-                  <div class="row">
-                     <c:forEach items="${rankOther}" var="rankOther">
-                     <div class="col-xxl-10 offset-xxl-1 col-xl-10 offset-xl-1 col-lg-10 offset-lg-1">
-                        <div class="events__item mb-10 hover__active">
-                           <div class="events__item-inner d-sm-flex align-items-center justify-content-between white-bg" style="margin-left: -11%; margin-right: -11%;">
-                              <!-- 나중에 순위 메길것 -->
-                              <span><h4>4</h4></span>
-                              <!--sql 첫번쨰 인덱스를 출력, 해당 학원이름 -->
-                              <h3 class="events__title"><a href="event-details.html">${rankOther[0]}</a></h3>
-                              <div class="events__content">
-                                 <div class="events__meta">
-                                    <!--sql 첫번쨰 인덱스를 출력, 해당 학원 후기 평균낸점수 -->
-                                    <span><i class="icon_star"></i>&nbsp;&nbsp;${rankOther[3]}</span>
-                                 </div>
-                              </div>
-                              <div class="events__more">
-                                 <a href="event-details.html" class="link-btn">
-                                    View More
-                                    <i class="far fa-arrow-right"></i>
-                                    <i class="far fa-arrow-right"></i>
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>   
-                     </c:forEach> 
                   </div>
                </div>
             </div>
          </section>
+         <!-- page title area end -->
+
+         <!-- teacher area start -->
+         <section class="teacher__area pt-115 pb-110">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xxl-6 offset-xxl-3">
+                     <div class="section__title-wrapper text-center mb-60">
+                        <h2 class="section__title">한눈에 보는 <br>
+                           최고의  <span class="yellow-bg"> 선생님들 <img src="/assets/img/shape/yellow-bg-2.png" alt="">  </span> <br>
+                        </h2>
+                        <p>You don't have to struggle alone, you've got our assistance and help.</p>
+                        
+                     </div>
+                  </div>
+               </div>
+
+
+
+
+
+
+               <!-- 선생님 리스트 나오는 부분-->
+               <c:forEach items="${teacherList}" var="teacherVO">
+                
+               <div class="row">
+                  
+                  <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                     
+                     <div class="teacher__item text-center grey-bg-5 transition-3 mb-30">
+                       
+                        <div class="teacher__thumb w-img fix">
+                        
+                           <a href="instructor-details?teacherId=${teacherVO.teacherId}"> 
+                              <img src="/assets/img/course/${teacherVO.tcPic}" alt="" width='310' height='300' > <!-- 사진 지정 -->
+                           </a>
+                        </div>
+                        <div class="teacher__content">
+                          
+                           <h3 class="teacher__title">${teacherVO.tcName}</h3> 
+                           <span> 선생님 </span> </br>
+                           <span> ${teacherVO.tcKeyword} </span>
+                           
+
+
+                           
+                        </div>
+
+                        
+                     </div>
+                     
+                  </div>
+
+            
+
+                  
+               </div>
+               
+               </c:forEach>
+
+               
+               
+                             <!-- 페이징 영역 시작  경호형꺼 받음 0104-->
+                         
+                             <div class="row">
+                              <div class="col-xxl-12">
+                                 <div class="basic-pagination wow fadeInUp mt-30" data-wow-delay=".2s">
+                                    <ul class="d-flex align-items-center"> 
+                                       <!-- first : 해당 페이지가 첫번째 페이지인지 여부(true/false로 구분)-->
+                                       <!-- 해당페이지가 첫번째인 경우에는 아무것도 설정안함-->
+                                       <!-- 해당 페이지가 첫번째 페이지가 아닌경우-->
+                                       <!-- 맨처음페이지로 이동 -->
+                                       <c:choose>
+                                       <c:when test="${elist.first}"></c:when>
+                                       
+                                       <c:otherwise>
+                                       <li class="prev">
+                                          <a href="instructor?page=1" class="link-btn link-prev">
+                                             Prev
+                                             <i class="arrow_left"></i>
+                                             <i class="arrow_left"></i>
+                                          </a>
+                                       </li>
+                                    </c:otherwise>
+                                 </c:choose>
+   
+                              <!-- 페이지 그룹 -->
+                              <!-- 시작블럭을 반복시작 인덱스로 종료블럭을 반복종료 인덱스로 설정  -->
+                              <c:forEach begin="${startBlockPage}" end="${endBlockPage}" var="i">
+                              <!-- 현재페이지의 +1이 i랑 같은 경우 다음페이지로 이동하게 설정 -->
+                              <!-- 현재페이지의 +1이 i랑 다른 경우 다음 페이지로 이동하게 설정-->
+                              <c:choose>
+                              <c:when test="${pageNumber+1 == i}">
+                                 <li>
+                                    <a href="instructor?page=${i}&keywords=${param.keywords}"><span>${i}</span></a>
+                                 </li>
+                              </c:when>
+                              <c:otherwise>
+                                 <li><a href="instructor?page=${i}&keywords=${param.keywords}"><span>${i}</span></a></li>
+                              </c:otherwise>
+                              </c:choose>
+                              </c:forEach>
+                              <!-- 맨마지막페이지 -->
+                              <!-- last : 해당 페이지가 마지막 페이지인지 여부(true/false로 구분)-->
+                              <!-- 해당페이지가 마지막인 경우에는 아무것도 설정안함-->
+                              <!-- 해당 페이지가 마지막 페이지가 아닌경우-->
+                              <!-- 마지막페이지로 이동 -->
+                              <c:choose>     
+                              <c:when test="${elist.last}"></c:when>
+                              <c:otherwise>
+                                 <li class="next">
+                                    <a href="instructor?page=${totalPages}" class="link-btn">
+                                    Next
+                                    <i class="arrow_right"></i>
+                                    <i class="arrow_right"></i>
+                                    </a>
+                                 </li>
+                              </c:otherwise>
+                              </c:choose>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+   
+   
+   
+                            
+   
+            </div>
+         </section>
+         <!-- teacher area end -->
+
+
+         
+
+         <!-- banner area start -->
+         <section class="banner__area pb-80">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                     <div class="banner__item p-relative mb-40" data-background="/assets/img/banner/banner-bg-1.jpg">
+                        <div class="banner__content">
+                           <span>Free</span>
+                           <h3 class="banner__title">
+                              <a href="course-details">Germany Foundation <br> Document</a>
+                           </h3>
+                           <a href="course-grid" class="e-btn e-btn-2">View Courses</a>
+                        </div>
+                        <div class="banner__thumb d-none d-sm-block d-md-none d-lg-block">
+                           <img src="/assets/img/banner/banner-img-1.png" alt="">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                     <div class="banner__item p-relative mb-40" data-background="/assets/img/banner/banner-bg-2.jpg">
+                        <div class="banner__content">
+                           <span class="orange">new</span>
+                           <h3 class="banner__title">
+                              <a href="course-details">Online Courses <br>From Eduka University</a>
+                           </h3>
+                           <a href="course-grid" class="e-btn e-btn-2">Find Out More</a>
+                        </div>
+                        <div class="banner__thumb banner__thumb-2 d-none d-sm-block d-md-none d-lg-block">
+                           <img src="/assets/img/banner/banner-img-2.png" alt="">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- banner area end -->
       </main>
-      
+
          <!-- footer area start -->
          <footer>
             <div class="footer__area footer-bg">
-               <div class="footer__top pt-190 pb-40">
+               <div class="footer__top pt-90 pb-40">
                   <div class="container">
                      <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">

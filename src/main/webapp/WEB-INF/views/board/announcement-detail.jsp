@@ -1,14 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
    <head>
+      <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <title>Educal – Online Learning and Education HTML5 Template </title>
+      <title>공지-상세페이지</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- Place favicon.ico in the root directory -->
@@ -25,7 +23,7 @@
       <link rel="stylesheet" href="/assets/css/fontAwesome5Pro.css">
       <link rel="stylesheet" href="/assets/css/elegantFont.css">
       <link rel="stylesheet" href="/assets/css/default.css">
-      <link rel="stylesheet" href="/assets/css/style.css">      
+      <link rel="stylesheet" href="/assets/css/style.css">
    </head>
    <body>
       <!--[if lte IE 9]>
@@ -382,78 +380,124 @@
       <div class="body-overlay"></div>
       <!-- sidebar area end -->
 
-      <!-- 메인페이지 시작 -->
       <main>
 
-         <!-- sign up area start -->
-         <section class="signup__area po-rel-z1 pt-100 pb-145">
-            <div class="sign__shape">
-               <img class="man-1" src="/assets/img/icon/sign/man-1.png" alt="">
-               <img class="man-2" src="/assets/img/icon/sign/man-2.png" alt="">
-               <img class="circle" src="/assets/img/icon/sign/circle.png" alt="">
-               <img class="zigzag" src="/assets/img/icon/sign/zigzag.png" alt="">
-               <img class="dot" src="/assets/img/icon/sign/dot.png" alt="">
-               <img class="bg" src="/assets/img/icon/sign/sign-up.png" alt="">
-            </div>
+         <!-- page title area start -->
+         <section class="page__title-area page__title-height page__title-overlay d-flex align-items-center" data-background="/assets/img/page-title/page-title.jpg">
             <div class="container">
                <div class="row">
-                  <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
-                     <div class="section__title-wrapper text-center mb-55">
-                        <h2 class="section__title">Sign in to <br>  recharge direct.</h2>
-                        <p>it you don't have an account you can <a href="#">Register here!</a></p>
+                  <div class="col-xxl-12">
+                     <div class="page__title-wrapper mt-110">
+                        <h3 class="page__title">공지-상세페이지</h3>                         
+                        <nav aria-label="breadcrumb">
+                           <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="index-2">Home</a></li>
+                              <li class="breadcrumb-item"><a href="announcement">공지</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">공지내용</li>
+                           </ol>
+                        </nav>
                      </div>
                   </div>
                </div>
+            </div>
+         </section>
+         <!-- page title area end -->
+
+         <!-- contact area start -->
+         <section class="contact__area pt-115 pb-120">
+            <div class="container">
                <div class="row">
-                  <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                     <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                           <div class="sign__in text-center">
-                              <!-- 카카오 로그인 -->
-                              <a href="https://kauth.kakao.com/oauth/authorize?client_id=ed05f17a60ce1cf99ab3e4539248dbbf&redirect_uri=http://localhost:8080/kakaoLogin&response_type=code" class="sign__social text-start mb-15"><i class="fab fa-facebook-f"></i>Sign in with Facebook</a>
-                              <p> <span>........</span> Or, <a href="sign-in">sign in</a> with your email<span> ........</span> </p>
-                           </div>
+                  <div class="col-xxl-7 col-xl-7 col-lg-6">
+                     <div class="contact__wrapper">
+                        <div class="section__title-wrapper mb-40">
+                           <!-- 상세내용 출력 -->
+                           <h3 class="section__title"><span class="yellow-bg yellow-bg-big">${announcement.anTitle}<img src="/assets/img/shape/yellow-bg.png" alt=""></span></h3>
+                           <br/>
+                           <span style="float: right;">${announcement.adId}</span><br/>
+                           <span style="float: right;"><fmt:formatDate value="${announcement.anDate}" pattern="yyyy년 MM월 dd일"/></span>  
                         </div>
-                        <div class="sign__form">
-                           <!-- bk 로그인 버튼 액션 -->
-                           <form action="loginMember" type="post">
-                              <div class="sign__input-wrapper mb-25">
-                                 <h5>ID</h5>
-                                 <div class="sign__input">
-                                    <input type="text" placeholder="ID" id="m_id" name="memIdString">
-                                    <i class="fal fa-user"></i>
+                        <div class="contact__form">
+                           <form action="/assets/mail.php">
+                              <div class="row">
+                                 <div class="col-xxl-12">
+                                    <div class="contact__form-input">
+                                       <textarea name="message" readonly style="height: 450px;">${announcement.anContent}</textarea>
+                                    </div>
                                  </div>
-                              </div>
-                              <div class="sign__input-wrapper mb-10">
-                                 <h5>Password</h5>
-                                 <div class="sign__input">
-                                    <input type="password" placeholder="Password" id="m_pass" name="memPass">
-                                    <i class="fal fa-lock"></i>
-                                 </div>
-                              </div>
-                              <div class="sign__action d-sm-flex justify-content-between mb-30">
-                                 <div class="sign__agree d-flex align-items-center">
-                                    <input class="m-check-input" type="checkbox" id="m-agree">
-                                    <label class="m-check-label" for="m-agree">Keep me signed in
-                                       </label>
-                                 </div>
-                                 <div class="sign__forgot">
-                                    <a href="findIdPw">계정 / 비밀번호 찾기</a>
-                                 </div>
-                              </div>
-                              <button class="e-btn  w-100" type="submit"> <span></span> Sign In</button>
-                              <div class="sign__new text-center mt-20">
-                                 <p>New to Markit? <a href="sign-up">Sign Up</a></p>
                               </div>
                            </form>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xxl-4 offset-xxl-1 col-xl-4 offset-xl-1 col-lg-5 offset-lg-1">
+                     <div class="contact__info white-bg p-relative z-index-1">
+                        <div class="contact__shape">
+                           <img class="contact-shape-1" src="/assets/img/contact/contact-shape-1.png" alt="">
+                           <img class="contact-shape-2" src="/assets/img/contact/contact-shape-2.png" alt="">
+                           <img class="contact-shape-3" src="/assets/img/contact/contact-shape-3.png" alt="">
+                        </div>
+                        <div class="contact__info-inner white-bg">
+                           <ul>
+                              <li>
+                                 <div class="contact__info-item d-flex align-items-start mb-35">
+                                    <div class="contact__info-icon mr-15">
+                                       <svg class="map" viewBox="0 0 24 24">
+                                          <path class="st0" d="M21,10c0,7-9,13-9,13s-9-6-9-13c0-5,4-9,9-9S21,5,21,10z"/>
+                                          <circle class="st0" cx="12" cy="10" r="3"/>
+                                       </svg>
+                                    </div>
+                                    <div class="contact__info-text">
+                                       <h4>사무실</h4>
+                                       <p><a target="_blank" href="http://kko.to/5iCvgyrjzg">(153-759) 서울시 금천구 가산동 426-5 월드메르디앙 2차 413호</a></p>
+   
+                                    </div>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="contact__info-item d-flex align-items-start mb-35">
+                                    <div class="contact__info-icon mr-15">
+                                       <svg class="mail" viewBox="0 0 24 24">
+                                          <path class="st0" d="M4,4h16c1.1,0,2,0.9,2,2v12c0,1.1-0.9,2-2,2H4c-1.1,0-2-0.9-2-2V6C2,4.9,2.9,4,4,4z"/>
+                                          <polyline class="st0" points="22,6 12,13 2,6 "/>
+                                       </svg>
+                                    </div>
+                                    <div class="contact__info-text">
+                                       <h4>이메일</h4>
+                                       <p><a href="mailto:rormtlssk@naver.com">rormtlssk@naver.com</a></p>
+                                       <p><a href="mailto:qpw321321@gmail.com">qpw321321@gmail.com</a></p>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li>
+                                 <div class="contact__info-item d-flex align-items-start mb-35">
+                                    <div class="contact__info-icon mr-15">
+                                       <svg class="call" viewBox="0 0 24 24">
+                                          <path class="st0" d="M22,16.9v3c0,1.1-0.9,2-2,2c-0.1,0-0.1,0-0.2,0c-3.1-0.3-6-1.4-8.6-3.1c-2.4-1.5-4.5-3.6-6-6  c-1.7-2.6-2.7-5.6-3.1-8.7C2,3.1,2.8,2.1,3.9,2C4,2,4.1,2,4.1,2h3c1,0,1.9,0.7,2,1.7c0.1,1,0.4,1.9,0.7,2.8c0.3,0.7,0.1,1.6-0.4,2.1  L8.1,9.9c1.4,2.5,3.5,4.6,6,6l1.3-1.3c0.6-0.5,1.4-0.7,2.1-0.4c0.9,0.3,1.8,0.6,2.8,0.7C21.3,15,22,15.9,22,16.9z"/>
+                                          </svg>
+                                    </div>
+                                    <div class="contact__info-text">
+                                       <h4>Phone</h4>
+                                       <p><a href="tel:010-2711-4855">010-2711-4855</a></p>
+                                       <p><a href="tel:010-8763-1061">010-8763-1061</a></p>
+                                    </div>
+                                 </div>
+                              </li>
+                           </ul>
+                           <div class="contact__social pl-30">
+                              <h4>Follow Us</h4>
+                              <ul>
+                                 <li><a href="#" class="fb" ><i class="social_facebook"></i></a></li>
+                                 <li><a href="#" class="tw" ><i class="social_twitter"></i></a></li>
+                                 <li><a href="#" class="pin" ><i class="social_pinterest"></i></a></li>
+                              </ul>
+                           </div>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
          </section>
-         <!-- sign up area end -->
-         
+         <!-- contact area end -->
       </main>
 
          <!-- footer area start -->
@@ -577,7 +621,6 @@
       <script src="/assets/js/wow.min.js"></script>
       <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
       <script src="/assets/js/main.js"></script>
-      
    </body>
 </html>
 
