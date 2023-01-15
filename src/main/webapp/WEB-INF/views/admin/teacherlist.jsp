@@ -109,8 +109,8 @@
     <div id="collapseFive" class="collapse" aria-labelledby="headingTwo"
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="">FAQ 관리</a> 
-            <a class="collapse-item" href="">QnA 관리</a> 
+            <a class="collapse-item" href="/admin/reviewList">리뷰 관리</a> 
+            <a class="collapse-item" href="/admin/honestList">솔직답변 관리</a> 
             <a class="collapse-item" href="/admin/announcement_m">공지사항 관리</a>
         </div>
     </div></li>    
@@ -165,7 +165,7 @@
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-dark" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
@@ -190,7 +190,7 @@
                                             placeholder="Search for..." aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
+                                            <button class="btn btn-dark" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
                                             </button>
                                         </div>
@@ -215,7 +215,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
+                                        <div class="icon-circle bg-dark">
                                             <i class="fas fa-file-alt text-white"></i>
                                         </div>
                                     </div>
@@ -266,7 +266,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../admin/img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="/admin/img/undraw_profile_1.svg"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -278,7 +278,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../admin/img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="/admin/img/undraw_profile_2.svg"
                                             alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -290,7 +290,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="../admin/img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="/admin/img/undraw_profile_3.svg"
                                             alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -324,7 +324,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                    src="../admin/img/undraw_profile.svg">
+                                    src="/admin/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -364,7 +364,7 @@
                     <!-- 학원 목록 테이블 -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">선생님 목록</h6>
+                            <h6 class="m-0 font-weight-bold text-dark">선생님 목록</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -390,29 +390,41 @@
                                     </tfoot>
                                     <tbody>
                                         <!--찬주야 여기서는 값 넣어야한다.-->
-                                        <c:forEach var='teacherList' items='${result}'>
+                                        <c:forEach var='teacherlist' items='${teacherlist}'>
                                         <tr>
-                                            <td>${teacherList.tId}</td>
-                                            <td>${teacherList.tName}</td>
-                                        	<td><fmt:formatDate value="${teacherList.tRegdate}" pattern="YYYY.MM.DD" /> </td>
-                                            <td>${teacherList.tKeyword}</td>
-                                        	<td>어떤 상태인지</td>
-                                           
+                                            <td>${teacherlist.teacherId}</td>
+                                            <td>${teacherlist.tcName}</td>
+                                        	<td>${teacherlist.tcKeyword} </td>
+                                            <td><fmt:formatDate value="${teacherlist.tcDate}" pattern="YYYY.MM.DD" /></td>
+
+                                            <td><c:choose>
+                                                <c:when test="${teacherlist.tcTruefalse == null }">
+                                                    <a href="teacherRegister?teacherId=${teacherlist.teacherId}" class="btn btn-secondary btn-icon-split">
+                                                        <span class="icon text-white-50"> <i
+                                                            class="fas fa-arrow-right"></i>
+                                                    </span> <span class="text">승인대기중</span>
+                                                    </a>
+                                                </c:when>
+                                                
                                             
-                                        	<!-- <td style="text-align:center;">
-                                        	
-												<a href="academyModify?ed_id=${vo.ed_id}"
-												class="btn btn-info btn-circle btn-sm">
-													<i class="fas fa-info-circle" aria-hidden="true"></i>
-												</a>
-											</td>-->
-											<!-- 삭제 버튼 클릭시 클릭한 시퀀스에 해당하는 글 삭제 -->
-											<!--<td style="text-align:center;">
-                                                <a href="deleteAcademy?ed_id=${vo.ed_id}" 
-                                                	class="btn btn-danger btn-circle btn-sm">
-                                                    <i class="fas fa-trash" aria-hidden="true"></i>
-                                                </a>
-                                            </td>-->
+                                                
+                                                <c:when test="${teacherlist.tcTruefalse == 1}">
+                                                    <a href="#" class="btn btn-success btn-icon-split"> <span
+                                                        class="icon text-white-50"> 
+                                                        <i class="fas fa-check"></i>
+                                                    </span> <span class="text">승인</span>
+                                                    </a>
+                                                </c:when>
+                                                <c:when test="${teacherlist.tcTruefalse == 0 }">
+                                                    <a href="#" class="btn btn-light btn-icon-split">
+                                                        <span class="icon text-gray-600">
+                                                            <i class="fas fa-arrow-right"></i>
+                                                        </span>
+                                                        <span class="text">거절</span>
+                                                    </a>
+                                                </c:when>
+                                            </c:choose></td>
+
                                         </tr>
                                         </c:forEach>
                                     </tbody>
@@ -462,28 +474,30 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-dark" href="login.html">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../admin/vendor/jquery/jquery.min.js"></script>
-    <script src="../admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../admin/js/sb-admin-2.min.js"></script>
+    <script src="/admin/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../admin/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="../admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../admin/js/demo/datatables-demo.js"></script>
+    <script src="/admin/js/demo/datatables-demo.js"></script>
+    <script src="/assets/js/refund-custom.js"></script>
+
 
 </body>
 

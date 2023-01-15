@@ -109,8 +109,8 @@
     <div id="collapseFive" class="collapse" aria-labelledby="headingTwo"
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="">FAQ 관리</a> 
-            <a class="collapse-item" href="">QnA 관리</a> 
+            <a class="collapse-item" href="/admin/reviewList">리뷰 관리</a> 
+            <a class="collapse-item" href="/admin/honestList">솔직답변 관리</a> 
             <a class="collapse-item" href="/admin/announcement_m">공지사항 관리</a>
         </div>
     </div></li>    
@@ -189,7 +189,7 @@
                                             placeholder="Search for..." aria-label="Search"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
+                                            <button class="btn btn-dark" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
                                             </button>
                                         </div>
@@ -214,7 +214,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
+                                        <div class="icon-circle bg-dark">
                                             <i class="fas fa-file-alt text-white"></i>
                                         </div>
                                     </div>
@@ -381,6 +381,7 @@
                                             <th>카테고리 키워드</th>
                                             <th>상태</th>
                                             <th></th>
+                                            
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -390,8 +391,10 @@
                                             <th>학원이름</th>
                                             <th>수업개강일</th>
                                             <th>수업종강일</th>
+                                            <th>카테고리 키워드</th>
                                             <th>상태</th>
                                             <th></th>
+                                            
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -413,7 +416,7 @@
 											</td>
 											<!-- 삭제 버튼 클릭시 클릭한 시퀀스에 해당하는 글 삭제 -->
 											<td style="text-align:center;">
-                                                <a href="deleteAcademy?ed_id=${vo.edId}" 
+                                                <a href="/admin/deleteAcademy?edId=${education.edId}" 
                                                 	class="btn btn-danger btn-circle btn-sm">
                                                     <i class="fas fa-trash" aria-hidden="true"></i>
                                                 </a>
@@ -467,7 +470,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login">Logout</a>
+                    <a class="btn btn-dark" href="login">Logout</a>
                 </div>
             </div>
         </div>

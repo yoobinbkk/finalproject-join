@@ -109,8 +109,8 @@
     <div id="collapseFive" class="collapse" aria-labelledby="headingTwo"
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="">FAQ 관리</a> 
-            <a class="collapse-item" href="">QnA 관리</a> 
+            <a class="collapse-item" href="/admin/reviewList">리뷰 관리</a> 
+            <a class="collapse-item" href="/admin/honestList">솔직답변 관리</a> 
             <a class="collapse-item" href="/admin/announcement_m">공지사항 관리</a>
         </div>
     </div></li>    
@@ -173,57 +173,83 @@
                 </nav>
                 <!-- End of Topbar -->
 
+
+
+
+                
+                <!-- 수정-->
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">선생님 등록</h6>
+                            <h6 class="m-0 font-weight-bold text-dark">선생님 등록</h6>
                         </div>
+
                         <div class="card-body">
                             <div class="table-responsive">
-                            	<form action="insertProduct.do" method="post">
+                                <!-- form-->
+                            	<form action="/admin/teacherUpdate" id = "upForm" method="post">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    
-								<tbody id="itemRegisterTbl">
+
+
+
+                                    <tbody id="itemRegisterTbl">
                                         <tr> 
-                                            <td class="tblTitle" colspan="3" style="font-size: 16pt; font-weight: bold;">선생님 정보</td> 
+                                            <td class="tblTitle" colspan="3" style="font-size: 16pt; font-weight: bold;">강사 정보</td> 
                                         </tr>
                                         <tr>
-                                            <th scope="row" style="width:20%;">이름</th>
-                                            <td class="iValue" colspan="2"><input type="text" name="product_name" /></td>
+                                            <input type="hidden" name="teacherId" value="${teacherRegister.teacherId}">
+                                      
+                                          <!-- readonly 넣으면 값을 못바꿈 회원가입했을때 이름가져오게 한다음 고정시킬까?-->
+                                            <th scope="row" style="width:20%;">강사 이름</th>
+                                            <td class="iValue" colspan="2">${teacherRegister.tcName}</td>
+                                            <input type="hidden" name="tcName" value="${teacherRegister.tcName}">
                                         </tr>
                                         <tr>
-                                            <th scope="row">선생님번호</th>
-                                            <td class="iValue" colspan="2"><input type="text" name="product_stock"/></td>
+                                            <th scope="row">강사 경력</th>
+                                            <td class="iValue" colspan="2"> ${teacherRegister.tcSpec}</td>
+                                            <input type="hidden" name="tcSpec" value="${teacherRegister.tcSpec}">
                                         </tr>
                                         <tr>
-                                            <th scope="row">카테고리 키워드</th>
-                                            <td class="iValue" colspan="2"><input type="text" name="product_number" readonly/></td>
+                                            <th scope="row">수업 키워드</th>
+                                            <td class="iValue" colspan="2">${teacherRegister.tcKeyword}</td>
+                                            <input type="hidden" name="tcKeyword" value="${teacherRegister.tcKeyword}">
                                         </tr>
                                         <tr>
-                                            <th scope="row">신청날짜</th>
-                                            <td class="iValue" colspan="2"><input type="text" name="category_code" /></td>
+                                            <th scope="row">강사 소개글</th>
+                                            <td class="iValue" colspan="2">${teacherRegister.tcIntro}</td>
+                                            <input type="hidden" name="tcIntro" value="${teacherRegister.tcIntro}">
                                         </tr>
                                          <tr>
-                                            <th scope="row" style="vertical-align: middle;">선생님 사진</th>
+                                            <th scope="row" style="vertical-align: middle;">강사 사진등록</th>
+                                            
+                                            <c:if test = "${teacherRegister.teacherId != null}">
                                             <td class="iValue" id="addImg"  colspan="2">
-                                               <input type="file" name="file" id="input-file"/></td>
+                                                <img src="../assets/img/course/${teacherRegister.tcPic}" alt="" width='300' height='300' ></td>
+                                                <input type="hidden" name="tcPic" value="${teacherRegister.tcPic}">
+                                            </c:if>  
+
                                         </tr>
-                                        <tr style="margin-bottom: -5px;">
-                                            <th scope="row" style="vertical-align: middle;" >선생님 경력</th>
-                                            <td class="iValue" colspan="2"><input type="text" name="product_price" style="margin-top: 7px"/></td>
-                                        </tr>
+                                        
+                                        <!--히든존-->
+                                        <input type="hidden" id = "tcTruefalse" name="tcTruefalse" value="">
+                                        
+
+
                                         <tr>
-                                            <th scope="row" style="vertical-align: middle;">상세 설명</th>
-                                         
-                                            <td colspan="3"><textarea name="product_desc"></textarea></td>
-                                        </tr>
-                                        <tr>
+                                            <c:if test = "${teacherRegister.teacherId != null}">
                                             <td colspan="3" style="text-align: center;" >
-                                                <input type="submit" value="승인" style="background-color : #4e73df; width:70px; height:30px; font-size: 10pt; color: white; border-style: none; border-radius: 3px;" >
-                                                <input type="submit" value="거절" style="background-color : #4e73df; width:70px; height:30px; font-size: 10pt; color: white; border-style: none; border-radius: 3px;" >                                            </td>
+                                                <input type="submit" id= "t-btn" value="승인" 
+                                                style="background-color : #4e73df; width:70px; height:30px; font-size: 10pt; color: white; border-style: none; border-radius: 3px;" onclick="teacherBtn()">
+                                                <input type="submit" id= "f-btn" value="거절" 
+                                                style="background-color : #4e73df; width:70px; height:30px; font-size: 10pt; color: white; border-style: none; border-radius: 3px;" onclick="teacherBtn2()" > 
+                                            </td>
+                                        </c:if>  
                                         </tr>
                                     </tbody>
+
+
+                                    
                                 </table>
                                 </form>
                             </div>
@@ -235,6 +261,14 @@
 
 
                 <!-- /.container-fluid -->
+
+
+
+
+
+
+
+                
 
             </div>
             <!-- End of Main Content -->
@@ -276,7 +310,7 @@
 				<div class="modal-footer" style="height:75px;">
 					<button class="btn btn-secondary" type="button" style="border-radius: 10px;"
 						data-dismiss="modal">취소</button>
-					<a class="btn btn-primary" href="../logOut.do" style="border-radius: 10px;">로그아웃</a>
+					<a class="btn btn-dark" href="../logOut.do" style="border-radius: 10px;">로그아웃</a>
 				</div>
 			</div>
 		</div>
@@ -298,5 +332,6 @@
    <!-- Page level custom scripts -->
    <script src="../admin/js/demo/chart-area-demo.js"></script>
    <script src="../admin/js/demo/chart-pie-demo.js"></script>
+   <script src="../assets/js/alljs.js"></script>
 
 </body>
