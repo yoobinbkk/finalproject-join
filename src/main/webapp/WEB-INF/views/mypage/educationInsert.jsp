@@ -9,22 +9,26 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png" />
     <!-- CSS here -->
-    <link rel="stylesheet" href="/assets/css/preloader.css" />
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/assets/css/meanmenu.css" />
-    <link rel="stylesheet" href="/assets/css/animate.min.css" />
-    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="/assets/css/swiper-bundle.css" />
-    <link rel="stylesheet" href="/assets/css/backToTop.css" />
-    <link rel="stylesheet" href="/assets/css/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="/assets/css/fontAwesome5Pro.css" />
-    <link rel="stylesheet" href="/assets/css/elegantFont.css" />
-    <link rel="stylesheet" href="/assets/css/default.css" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/wishlist.css" />
+    <link rel="stylesheet" href="../assets/css/preloader.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/meanmenu.css" />
+    <link rel="stylesheet" href="../assets/css/animate.min.css" />
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.css" />
+    <link rel="stylesheet" href="../assets/css/backToTop.css" />
+    <link rel="stylesheet" href="../assets/css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="../assets/css/fontAwesome5Pro.css" />
+    <link rel="stylesheet" href="../assets/css/elegantFont.css" />
+    <link rel="stylesheet" href="../assets/css/default.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/wishlist.css" />
+    <link rel="stylesheet" href="../assets/css/allcss.css" />
     <link rel="stylesheet" href="/assets/css/onoff.css">
+    <!--섬머노트용 css-->
+    <link rel="stylesheet" href="/assets/css/summernote/summernote-lite.css">
+    
 
     <style>
       #accordionSidebar {
@@ -85,9 +89,9 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
       <div id="loading-center">
         <div id="loading-center-absolute">
           <div class="loading-content">
-            <img class="loading-logo-text" src="/assets/img/logo/logo-text-2.png" alt="" />
+            <img class="loading-logo-text" src="../assets/img/logo/logo-text-2.png" alt="" />
             <div class="loading-stroke">
-              <img class="loading-logo-icon" src="/assets/img/logo/logo-icon.png" alt="" />
+              <img class="loading-logo-icon" src="../assets/img/logo/logo-icon.png" alt="" />
             </div>
           </div>
         </div>
@@ -113,7 +117,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-4 col-6">
                   <div class="header__left d-flex">
                      <div class="logo">
-                        <a href="index">
+                        <a href="/startpage">
                            <img src="/assets/img/logo/logo.png" alt="logo">
                         </a>
                      </div>
@@ -313,7 +317,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
               <li>
                 <div class="cartmini__thumb">
                   <a href="#">
-                    <img src="/assets/img/course/sm/cart-1.jpg" alt="" />
+                    <img src="../assets/img/course/sm/cart-1.jpg" alt="" />
                   </a>
                 </div>
                 <div class="cartmini__content">
@@ -332,7 +336,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
               <li>
                 <div class="cartmini__thumb">
                   <a href="#">
-                    <img src="/assets/img/course/sm/cart-2.jpg" alt="" />
+                    <img src="../assets/img/course/sm/cart-2.jpg" alt="" />
                   </a>
                 </div>
                 <div class="cartmini__content">
@@ -351,7 +355,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
               <li>
                 <div class="cartmini__thumb">
                   <a href="#">
-                    <img src="/assets/img/course/sm/cart-3.jpg" alt="" />
+                    <img src="../assets/img/course/sm/cart-3.jpg" alt="" />
                   </a>
                 </div>
                 <div class="cartmini__content">
@@ -397,7 +401,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
         <div class="sidebar__content">
           <div class="logo mb-40">
             <a href="index">
-              <img src="/assets/img/logo/logo.png" alt="logo" />
+              <img src="../assets/img/logo/logo.png" alt="logo" />
             </a>
           </div>
           <div class="mobile-menu fix"></div>
@@ -434,7 +438,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
       <!-- page title area start -->
       <section
         class="page__title-area page__title-height page__title-overlay d-flex align-items-center"
-        data-background="/assets/img/page-title/page-title-2.jpg"
+        data-background="../assets/img/page-title/page-title-2.jpg"
       >
         <div class="container">
           <div class="row">
@@ -458,7 +462,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
       
       <section class="cart-area pt-100 pb-100">
          <div class="accounthead">
-            
+            <h4>국비/부트캠프 등록</h4>
          </div>
         <div class="container">
          
@@ -512,9 +516,11 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                       data-parent="#accordionSidebar"
                     >
                       <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="myreview">국비/부트 리뷰관리</a><br />
-                        <a class="collapse-item" href="myreview2">화상/학원 리뷰관리</a><br />
-                        <a class="collapse-item" href="admin/academyRegister">솔직답변</a><br />
+                        <a class="collapse-item" href="/mypage/myreview">리뷰관리</a><br />
+                        <a class="collapse-item" href="">1:1문의</a><br />
+                        <a class="collapse-item" href="">코딩게시판</a><br />
+                        <a class="collapse-item" href="/mypage/myquestion">솔직답변</a><br />
+                        <a class="collapse-item" href="">학원 탈퇴</a>
                       </div>
                     </div>
                   </li>
@@ -531,8 +537,8 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                     </a>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                       <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">관심학원리스트</a><br/> 
-                        <a class="collapse-item" href="#">관심강의리스트</a>
+                        <a class="collapse-item" href="/mypage/wishlistaca">관심학원리스트</a><br/> 
+                        <a class="collapse-item" href="/mypage/wishlistlec">관심강의리스트</a>
                       </div>
                     </div>
                   </li>
@@ -561,8 +567,14 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/admin/member.do">
+                    <a class="nav-link" href="/mypage/tutorInsert">
                       <i class="fas fa-fw fa-table"></i> <span>튜터등록</span>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/mypage/educationInsert">
+                      <i class="fas fa-fw fa-table"></i> <span>학원등록</span>
                     </a>
                   </li>
 
@@ -576,126 +588,189 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
 
 
 
-
-            <!--내가 작성한 국비/부트에서의 리뷰-->
+              <!--스승 등록 폼-->
             <div class="col-sm-9">
-              <div class="accounthead mb-25">
-                 <h2 class="section__title "><span class="yellow-bg-sm">My Academy Review<img src="../assets/img/shape/yellow-bg-4.png" style="height:50px;"alt="">  </span></h2>
-                 
-              </div>
-              <h6><학원번호 클릭시 해당 학원으로 넘어갑니다></h6>
+           
+                     <!-- Begin Page Content -->
+                     <div class="container-fluid">
+                      <div class="card shadow mb-4">
+                          <div class="card-header py-3">
+                              <h6 class="m-0 font-weight-bold text-primary">강사 정보입력</h6>
+                          </div>
+                          <div class="card-body">
+                              <div class="table-responsive">
 
-                 <form action="myreview" method="get">
-                  <c:forEach items="${mypageReviewList1}" var="mypageReviewList1">
-                    <div class="table-content table-responsive mb-40">
-                      <table id="qnaTable" class="reviweTable">
-                        <thead>
-                          <tr>
-                            <th style="width:10%;">리뷰번호</th>
-                            <th style="width:15%;">학원번호</th>
-                            <th style="width:55%;">리뷰내용</th>
-                            <th style="width:20%;">작성일자</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <!--  <td><a href="noticeDetail.do?notify_seq=${vo.notify_seq }">안녕</a></td>-->
-                            <tr>
-                           
-                              <td>${mypageReviewList1.RId}</a></td>
-                              <td><a href="/academy/course-details?edId=${mypageReviewList1.edId}">${mypageReviewList1.edId}</a></td>
-                              <td>${mypageReviewList1.reContent}</a></td>
-                              <td>${mypageReviewList1.reDate}</a></td>
-                           
-                            </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                   
-                  </c:forEach>
-                 </form>
+                                <!--선생님 등록 form 태그 시작-->
+                                <form id = "aduForm" action="educationInsert" method="post">
+                                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                      
+                                    <tbody id="itemRegisterTbl">
+                                          <tr> 
+                                              <td class="tblTitle" colspan="3" style="font-size: 16pt; font-weight: bold;">학원 정보</td> 
+                                          </tr>
+                                          <tr>
+                                        
+                                            <!-- readonly 넣으면 값을 못바꿈 회원가입했을때 이름가져오게 한다음 고정시킬까?-->
+                                              <th scope="row" style="width:20%;">학원명</th>
+                                              <td class="iValue" colspan="2"><input type="text" name="edName"  id = "edName" placeholder="ex) 한국소프트웨어인재개발원" style="width:50%;"/></td>
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">교육과정 제목</th>
+                                              <td class="iValue" colspan="2"><input type="text" 
+                                                name="edTitle"  id = "edTitle" style = "width:500px;"  placeholder="ex) 백엔드 개발자 취업캠프(Java)" ></td>
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">학원 수업키워드</th>
+                                              <td class="iValue" colspan="2"><input type="text" 
+                                                name="edKeyword"  id = "edKeyword" style = "width:500px;" placeholder="ex) javascript / Python / JAVA / jquery / SQL > 교육내용 위주"/></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">접수 마감일</th>
+                                            <td class="iValue" colspan="2"><input type="date" min="2022-04-01" max="2023-12-25"
+                                              name="edEnlistDate"  id = "edEnlistDate" style = "width:500px;" placeholder="ex) javascript / 비동기처리 / JAVA"/></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">수업 개강일</th>
+                                            <td class="iValue" colspan="2"><input type="date" min="2022-04-01" max="2023-12-25"
+                                              name="edStartDate"  id = "edStartDate" style = "width:500px;" placeholder="ex) javascript / 비동기처리 / JAVA"/></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">수업 종강일</th>
+                                            <td class="iValue" colspan="2"><input  type="date" min="2022-04-01" max="2023-12-25"
+                                              name="edEndDate"  id = "edEndDate" style = "width:500px;" placeholder="ex) javascript / 비동기처리 / JAVA"/></td>
+                                          </tr> 
+                                          <tr>
+                                            <th scope="row">수업 등록일</th>
+                                            <td class="iValue" colspan="2"><input  type="date" min="2022-04-01" max="2023-12-25"
+                                              name="edDays"  id = "edDays" style = "width:500px;" placeholder="ex) javascript / 비동기처리 / JAVA"/></td>
+                                          </tr> 
+                                          <tr> 
+                                            <td class="tblTitle" colspan="3" style="font-size: 16pt; font-weight: bold;">추가 기입</td> 
+                                        </tr>
 
-                 
+                                          <tr>
+                                            <th scope="row">수강비</th>
+                                            <td class="iValue" colspan="2"><input  type="text" min="2022-04-01" max="2023-12-25"
+                                              name="edPrice"  id = "edPrice" style="width:20%;" placeholder="무료" > <div style="font-size: 10pt; color: red;" >ex) 50만원 / 추후공지 / ~ 만원 > 입력틀을 유지</div></td>
+                                          </tr> 
 
-                 
-                             <!-- 페이징 영역 시작  경호형꺼 받음 0104-->
-                         
-                             <div class="row">
-                              <div class="col-xxl-12">
-                                 <div class="basic-pagination wow fadeInUp mt-30" data-wow-delay=".2s">
-                                    <ul class="d-flex align-items-center"> 
-                                       
-                                       <!-- first : 해당 페이지가 첫번째 페이지인지 여부(true/false로 구분)-->
-                                       <!-- 해당페이지가 첫번째인 경우에는 아무것도 설정안함-->
-                                       <!-- 해당 페이지가 첫번째 페이지가 아닌경우-->
-                                       <!-- 맨처음페이지로 이동 -->
-                                       <c:choose>
-                                       <c:when test="${elist.first}"></c:when>
-                                       
-                                       <c:otherwise>
-                                       <li class="prev">
-                                          <a href="myreview?page=1" class="link-btn link-prev">
-                                             Prev
-                                             <i class="arrow_left"></i>
-                                             <i class="arrow_left"></i>
-                                          </a>
-                                       </li>
-                                    </c:otherwise>
-                                 </c:choose>
+                                          <tr>
+                                            <th scope="row">훈련비</th>
+                                            <td class="iValue" colspan="2"><input  type="text" min="2022-04-01" max="2023-12-25"
+                                              name="edComm"  id = "edComm" style="width:20%;" placeholder="20만원" > <div style="font-size: 10pt; color: red;" >ex) 50만원 / 추후공지 / ~ 만원 > 입력틀을 유지</div></td>
+                                          </tr> 
+
+                                          <tr>
+                                            <th scope="row">수업시간 </th> <!-- 그냥 텍스트로-->
+                                            <td class="iValue" colspan="2"><input  type="text" min="2022-04-01" max="2023-12-25"
+                                              name="edTime"  id = "edTime" style = "width:500px;" placeholder="ex) 10시 ~ 19시 / 주5회 "/></td>
+                                          </tr> 
    
-                              <!-- 페이지 그룹 -->
-                              <!-- 시작블럭을 반복시작 인덱스로 종료블럭을 반복종료 인덱스로 설정  -->
-                              <c:forEach begin="${startBlockPage}" end="${endBlockPage}" var="i">
-                              <!-- 현재페이지의 +1이 i랑 같은 경우 다음페이지로 이동하게 설정 -->
-                              <!-- 현재페이지의 +1이 i랑 다른 경우 다음 페이지로 이동하게 설정-->
-                              <c:choose>
-                              <c:when test="${pageNumber+1 == i}">
-                                 <li>
-                                    <a href="myreview?page=${i}&m_idint=${param.m_idint}"><span>${i}</span></a>
-                                 </li>
-                              </c:when>
-                              <c:otherwise>
-                                 <li><a href="myreview?page=${i}&m_idint=${param.m_idint}"><span>${i}</span></a></li>
-                              </c:otherwise>
-                              </c:choose>
-                              </c:forEach>
-                              <!-- 맨마지막페이지 -->
-                              <!-- last : 해당 페이지가 마지막 페이지인지 여부(true/false로 구분)-->
-                              <!-- 해당페이지가 마지막인 경우에는 아무것도 설정안함-->
-                              <!-- 해당 페이지가 마지막 페이지가 아닌경우-->
-                              <!-- 마지막페이지로 이동 -->
-                              <c:choose>     
-                              <c:when test="${elist.last}"></c:when>
-                              <c:otherwise>
-                                 <li class="next">
-                                    <a href="myreview?page=${i}&m_idint=${totalPages}" class="link-btn">
-                                    Next
-                                    <i class="arrow_right"></i>
-                                    <i class="arrow_right"></i>
-                                    </a>
-                                 </li>
-                              </c:otherwise>
-                              </c:choose>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
+
+                                          <tr>
+                                            <th scope="row">학원위치 </th> <!-- 그냥 텍스트로-->
+                                            <td class="iValue" colspan="2"><input  type="text" min="2022-04-01" max="2023-12-25"
+                                              name="edAddr"  id = "edAddr" style = "width:500px;" placeholder="ex) 서울특별시 금천구 가산디지털2로 123 2차 4층"/></td>
+                                          </tr> 
+                                          
+
+                                          <tr>
+                                            <th scope="row" style="vertical-align: middle;">학원 사진등록</th>
+                                            <td class="iValue" id="addImg"  colspan="2">
+                                               <input type="file" name="edPic" id="input-file"/></td>
+                                        </tr>
+
+                                         <!-- 섬머노트 들어갈 자리-->
+                                         <tr>
+                                          <th scope="row">주차별 커리큘럼</th>
+                                          <td >
+                                          
+                                            <textarea type="text"  name="edCurriculum"  id = "summernote" ></textarea>
+                                         
+                                          </td>
+                                        </tr>
+
+                                           <!-- 섬머노트 들어갈 자리-->
+                                           <tr>
+                                            <th scope="row">학원 소개글</th>
+                                            <td >
+                                             
+                                              <textarea type="text"  name="edIntro"  id = "summernote2" ></textarea>
+                                             
+                                            </td>
+                                         </tr>
+
+                              
+                                          <tr>
+
+                                              <td colspan="3" style="text-align: center;" >
+                                                  <input type="button" value="등록" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color : #4e73df; width:70px; height:30px; font-size: 10pt; color: white; border-style: none; border-radius: 3px;" >
+                                              </td>
+
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                                </form><!--end of form-->
+                            </div>
                         </div>
-                     </div>
-   
-   
-   
+                    </div>
+                      
 
 
-           </div>
+
+
+
+                
+      
+                  
+            </div>
           </div>
         </div>
       </section>
       <!-- Cart Area End-->
+
     </main>
 
-
-
-
+<!-- modal: HonestQuestion -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+     <div class="modal-content">
+       
+           <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">솔직 질문</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+              <input type="hidden" name="memIdInt" value="${sessionScope.memIdInt}">
+              <div class="mb-3">
+                 <label class="col-form-label">입력 정보를 등록하시겠습니까?</label>
+                 <div class="hq-category">
+                    <div class="div2">학원명 > 필수</div>
+                    <div class="div2">교육과정제목 > 필수</div>
+                    <div class="div2">학원수업키워드 > 필수</div>
+                    <div class="div2">접수마감일  > 필수</div>
+                    <div class="div2">수업개강일  > 필수</div>
+                    <div class="div2">수업종강일 > 필수</div>
+                    <div class="div2">수강비 > 필수</div>
+                    <div class="div2">훈련비 > 필수</div>
+                    <div class="div2">수업시간 > 필수</div>
+                    <div class="div2">학원위치 > 필수</div>
+                    <div class="div2">학원사진 > 필수</div>
+                    <div class="div2">커리큘럼 > 필수</div>
+                    <div class="div2">학원소개글 > 필수</div>
+                 </div>
+                 <input type="hidden" id="hq_cat" name="hq_category">
+              </div>
+              
+           </div>
+           <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick="eduInsert();" >등록하기</button>
+           </div>
+       
+     </div>
+  </div>
+</div>
 
     <!-- footer area start -->
     <footer>
@@ -708,7 +783,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                   <div class="footer__widget-head mb-22">
                     <div class="footer__logo">
                       <a href="index">
-                        <img src="/assets/img/logo/logo-2.png" alt="" />
+                        <img src="../assets/img/logo/logo-2.png" alt="" />
                       </a>
                     </div>
                   </div>
@@ -816,24 +891,31 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
     </footer>
     <!-- footer area end -->
     <!-- JS here -->
-    <script src="/assets/js/vendor/jquery-3.5.1.min.js"></script>
-    <script src="/assets/js/vendor/waypoints.min.js"></script>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/jquery.meanmenu.js"></script>
-    <script src="/assets/js/swiper-bundle.min.js"></script>
-    <script src="/assets/js/owl.carousel.min.js"></script>
-    <script src="/assets/js/jquery.fancybox.min.js"></script>
-    <script src="/assets/js/isotope.pkgd.min.js"></script>
-    <script src="/assets/js/parallax.min.js"></script>
-    <script src="/assets/js/backToTop.js"></script>
-    <script src="/assets/js/jquery.counterup.min.js"></script>
-    <script src="/assets/js/ajax-form.js"></script>
-    <script src="/assets/js/wow.min.js"></script>
-    <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/wishList.js"></script>
+    <script src="../assets/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="../assets/js/vendor/waypoints.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery.meanmenu.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/jquery.fancybox.min.js"></script>
+    <script src="../assets/js/isotope.pkgd.min.js"></script>
+    <script src="../assets/js/parallax.min.js"></script>
+    <script src="../assets/js/backToTop.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/ajax-form.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/wishList.js"></script>
+    <script src="../assets/js/alljs.js"></script> <!--찬주 추가 모달 버튼용 및 금액계산-->
+    
     <!--0106 좋아요 버튼 관련 ajax-->
     <!-- Bootstrap core JavaScript-->
     <script src="../admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--서머노트용 js-->
+    <script src="../assets/js/summernote/summernote-lite.js"></script>
+    <script src="../assets/js/summernote/summ.js"></script>
+    <script src="../assets/js/summernote/lang/summernote-ko-KR.js"></script>
+    
   </body>
 </html>

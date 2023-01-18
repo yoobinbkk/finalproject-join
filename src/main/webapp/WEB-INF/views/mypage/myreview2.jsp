@@ -583,7 +583,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                  <h2 class="section__title "><span class="yellow-bg-sm">My Academy Review<img src="../assets/img/shape/yellow-bg-4.png" style="height:50px;"alt="">  </span></h2>
                  
               </div>
-              <h6><학원번호 클릭시 해당 학원으로 넘어갑니다></h6>
+              <h6><강의번호 클릭시 해당 학원으로 넘어갑니다></h6>
 
                  <form action="myreview" method="get">
                   <c:forEach items="${mypageReviewList1}" var="mypageReviewList1">
@@ -592,7 +592,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                         <thead>
                           <tr>
                             <th style="width:10%;">리뷰번호</th>
-                            <th style="width:15%;">학원번호</th>
+                            <th style="width:15%;">강의번호</th>
                             <th style="width:55%;">리뷰내용</th>
                             <th style="width:20%;">작성일자</th>
                           </tr>
@@ -602,7 +602,7 @@ prefix='c' uri="http://java.sun.com/jsp/jstl/core"%>
                             <tr>
                            
                               <td>${mypageReviewList1.RId}</a></td>
-                              <td><a href="/academy/course-details?edId=${mypageReviewList1.edId}">${mypageReviewList1.edId}</a></td>
+                              <td><a href="/lecture/lecture-details?vcId=${mypageReviewList1.vcId}">${mypageReviewList1.vcId}</a></td>
                               <td>${mypageReviewList1.reContent}</a></td>
                               <td>${mypageReviewList1.reDate}</a></td>
                            
